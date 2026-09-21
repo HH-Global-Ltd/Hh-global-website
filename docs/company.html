@@ -1263,6 +1263,32 @@
  @media (max-width: 900px) {
  .pub-grid { grid-template-columns: 1fr; }
  }
+
+ /* Dropdown menu, matching the home page */
+ .dropdown { position: relative; }
+ .dropdown-menu {
+ display: none;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ background: var(--navy);
+ min-width: 230px;
+ border-top: 2px solid var(--gold);
+ box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+ z-index: 200;
+ padding: 6px 0;
+ }
+ .dropdown:hover .dropdown-menu, .dropdown.open .dropdown-menu { display: block; }
+ .dropdown-menu a {
+ display: block;
+ padding: 10px 20px;
+ color: rgba(255,255,255,0.8);
+ font-size: 13px;
+ letter-spacing: 0.3px;
+ text-decoration: none;
+ white-space: nowrap;
+ }
+ .dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
 </style>
 <body>
 
@@ -1276,13 +1302,27 @@
  <span></span><span></span><span></span>
  </button>
  <ul class="nav-links">
- <li><a href="#companies">Our Companies</a></li>
- <li><a href="#team">Leadership</a></li>
+ <li class="dropdown">
+ <a href="index.html#clients">Who We Serve ▾</a>
+ <div class="dropdown-menu">
+ <a href="index.html#differentiator">Why HH Global Holdings</a>
+ <a href="index.html#markets">One Health</a>
+ </div>
+ </li>
+ <li><a href="labarchitect.html">LabArchitect™</a></li>
+ <li class="dropdown">
+ <a href="index.html#cases">Case Studies ▾</a>
+ <div class="dropdown-menu">
+  <a href="cases-diagnostics.html">Diagnostics &amp; Drug Development</a>
+ <a href="cases-veterinary.html">Veterinary &amp; Environmental</a>
+ </div>
+ </li>
+ <li><a href="innovation-ip.html">Innovation &amp; IP</a></li>
  <li><a href="scientific-practice.html">Scientific Practice</a></li>
- <li><a href="#articles">Publications</a></li>
+ <li><a href="company.html">Company Profile</a></li>
+ <li><a href="company.html#articles">Publications</a></li>
  </ul>
- <a href="#contact" class="nav-cta">Contact Us</a>
- 
+ <a href="index.html#contact" class="nav-cta">Contact Us</a>
  </div>
 </nav>
 
@@ -1723,5 +1763,30 @@
  });
 </script>
  <script src="review-mode.js" defer></script>
+<script>
+ // Touch-friendly dropdowns: first tap opens the menu (no double-tap needed),
+ // tapping a menu item or outside closes it. Pointer/hover devices keep :hover.
+ (function () {
+   var touch = window.matchMedia('(hover: none)').matches;
+   if (!touch) return;
+   document.querySelectorAll('.dropdown > a').forEach(function (link) {
+     link.addEventListener('click', function (e) {
+       var dd = link.parentElement;
+       if (!dd.classList.contains('open')) {
+         e.preventDefault();
+         document.querySelectorAll('.dropdown.open').forEach(function (o) {
+           if (o !== dd) o.classList.remove('open');
+         });
+         dd.classList.add('open');
+       }
+     });
+   });
+   document.addEventListener('click', function (e) {
+     if (!e.target.closest('.dropdown')) {
+       document.querySelectorAll('.dropdown.open').forEach(function (o) { o.classList.remove('open'); });
+     }
+   });
+ })();
+</script>
 </body>
 </html>
