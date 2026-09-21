@@ -614,6 +614,41 @@
  white-space: nowrap;
  }
  .dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
+
+ /* Animated indicative lab plan in the hero (right-hand side) */
+ .hero > .container { position: relative; }
+ .la-hero-plan { position: absolute; right: 32px; top: 50%; transform: translateY(-50%);
+   width: min(40%, 520px); z-index: 1; pointer-events: none; }
+ @media (max-width: 1100px) { .la-hero-plan { display: none; } }
+
+.lp{width:100%;height:auto;display:block;font-family:'Inter',system-ui,sans-serif}
+.lp-w{fill:none;stroke:#C5A25B;stroke-width:1.6;stroke-linecap:square;
+ stroke-dasharray:2600;stroke-dashoffset:2600;animation:lpDraw 14s ease-in-out infinite}
+.lp-d1{animation-delay:0s}.lp-d2{animation-delay:.35s}.lp-d3{animation-delay:.7s}
+.lp-d4{animation-delay:1.05s}.lp-d5{animation-delay:1.4s}
+@keyframes lpDraw{0%{stroke-dashoffset:2600}18%{stroke-dashoffset:0}
+ 92%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+.lp-clean{fill:rgba(197,162,91,.07);stroke:#C5A25B;stroke-width:1.2;stroke-dasharray:5 5;
+ opacity:0;animation:lpFade 14s ease-in-out infinite;animation-delay:1.7s}
+.lp-grid{opacity:0;animation:lpFade 14s ease-in-out infinite}
+@keyframes lpFade{0%,10%{opacity:0}22%{opacity:1}92%{opacity:1}100%{opacity:0}}
+.lp-n{fill:#C5A25B;font-size:11px;font-weight:700;letter-spacing:1.6px}
+.lp-t{fill:#D8E0EE;font-size:14px;font-weight:600}
+.lp-s{fill:#9FB0CD;font-size:11px;letter-spacing:1.4px}
+.lp-lb text{opacity:0;animation:lpFade 14s ease-in-out infinite}
+.lp-l1 {animation-delay:1.9s}.lp-l2{animation-delay:2.1s}.lp-l3{animation-delay:2.3s}
+.lp-l4{animation-delay:2.5s}.lp-l5{animation-delay:2.7s}.lp-l6{animation-delay:2.9s}
+.lp-l7{animation-delay:3.1s}
+.lp-flow{fill:none;stroke:#D8BF94;stroke-width:1.6;stroke-dasharray:6 8;opacity:0;
+ animation:lpFade 14s ease-in-out infinite;animation-delay:3.3s}
+.lp-dot{fill:#fff;filter:drop-shadow(0 0 6px rgba(216,191,148,.9))}
+.lp-cap{fill:#6F7F99;font-size:11px;font-style:italic;opacity:0;
+ animation:lpFade 14s ease-in-out infinite;animation-delay:3.6s}
+@media(prefers-reduced-motion:reduce){
+ .lp-w{stroke-dashoffset:0;animation:none}
+ .lp-clean,.lp-grid,.lp-lb text,.lp-flow,.lp-cap{opacity:1;animation:none}
+ .lp-dot{display:none}}
+
 </style>
 </head>
 <body>
@@ -663,6 +698,53 @@
         <a href="#modules" class="btn btn-gold">Explore the 8 Modules</a>
         <a href="#contact" class="btn btn-outline">Discuss Your Build</a>
       </div>
+    </div>
+    <div class="la-hero-plan">
+<svg class="lp" viewBox="0 0 900 620" role="img"
+  aria-label="Architectural plan of a laboratory: sample receipt, preparation, cold store, main laboratory, gowning lobby, clean room, data and reporting, with the sample route drawn through it">
+ <defs>
+  <pattern id="lpGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+   <path d="M30 0 L0 0 0 30" fill="none" stroke="#C5A25B" stroke-width=".4" opacity=".13"/>
+  </pattern>
+ </defs>
+ <rect x="0" y="0" width="900" height="620" fill="none"/>
+ <rect class="lp-grid" x="40" y="40" width="820" height="540" fill="url(#lpGrid)"/>
+
+ <!-- outer envelope -->
+ <rect class="lp-w lp-d1" x="40" y="40" width="820" height="540" rx="2"/>
+
+ <!-- partitions, drawn with door gaps -->
+ <path class="lp-w lp-d2" d="M300 40 L300 150 M300 200 L300 280"/>
+ <path class="lp-w lp-d2" d="M560 40 L560 150 M560 200 L560 280"/>
+ <path class="lp-w lp-d3" d="M40 280 L150 280 M210 280 L470 280 M530 280 L860 280"/>
+ <path class="lp-w lp-d4" d="M340 280 L340 400 M340 460 L340 580"/>
+ <path class="lp-w lp-d4" d="M470 280 L470 400 M470 460 L470 580"/>
+ <path class="lp-w lp-d5" d="M620 280 L620 400 M620 460 L620 580"/>
+
+ <!-- clean room, marked as the controlled zone -->
+ <rect class="lp-clean lp-d6" x="470" y="280" width="150" height="300"/>
+
+ <!-- room labels -->
+ <g class="lp-lb">
+  <text class="lp-n lp-l1" x="60" y="72">01</text><text class="lp-t lp-l1" x="60" y="92">Sample receipt</text>
+  <text class="lp-n lp-l2" x="320" y="72">02</text><text class="lp-t lp-l2" x="320" y="92">Preparation</text>
+  <text class="lp-n lp-l3" x="580" y="72">03</text><text class="lp-t lp-l3" x="580" y="92">Cold store</text>
+  <text class="lp-n lp-l4" x="60" y="312">04</text><text class="lp-t lp-l4" x="60" y="332">Main laboratory</text>
+  <text class="lp-n lp-l5" x="360" y="312">05</text><text class="lp-t lp-l5" x="360" y="332">Gowning</text>
+  <text class="lp-n lp-l6" x="490" y="312">06</text><text class="lp-t lp-l6" x="490" y="332">Clean room</text>
+  <text class="lp-s lp-l6" x="490" y="350">ISO 7</text>
+  <text class="lp-n lp-l7" x="640" y="312">07</text><text class="lp-t lp-l7" x="640" y="332">Data &amp; reporting</text>
+ </g>
+
+ <!-- the route a sample takes -->
+ <path class="lp-flow" id="lpRoute"
+   d="M175 130 L430 130 L430 175 L690 175 L690 230 L175 230 L175 430 L400 430 L400 520 L545 520 L545 430 L740 430"/>
+ <circle class="lp-dot" r="5"><animateMotion dur="14s" repeatCount="indefinite"
+   keyPoints="0;0;1;1" keyTimes="0;0.28;0.92;1" calcMode="linear">
+   <mpath href="#lpRoute"/></animateMotion></circle>
+
+ <text class="lp-cap" x="40" y="606">Indicative plan. Every deployment is drawn to the work it has to carry.</text>
+</svg>
     </div>
   </div>
 </section>
