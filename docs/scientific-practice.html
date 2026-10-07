@@ -581,6 +581,36 @@
  white-space: nowrap;
  }
  .dropdown-menu a:hover { color: var(--gold); background: rgba(255,255,255,0.05); }
+
+/* footer, standardised 7 Oct 2026 */
+/* ─ FOOTER ─ */
+ footer {
+ background: #0B1F3F;
+ padding: 40px 32px;
+ }
+.footer-inner {
+ max-width: var(--max); margin: 0 auto;
+ display: flex; justify-content: space-between;
+ align-items: flex-start; flex-wrap: wrap; gap: 24px;
+ }
+.footer-brand img { height: 32px; margin-bottom: 10px; }
+.footer-brand p { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.4; }
+.footer-links { text-align: right; }
+.footer-links a {
+ color: rgba(255,255,255,0.5); text-decoration: none;
+ font-size: 13px; transition: color 0.2s;
+ }
+.footer-links a:hover { color: var(--gold); }
+.footer-legal {
+ width: 100%;
+ border-top: 1px solid rgba(255,255,255,0.06);
+ padding-top: 20px; margin-top: 12px;
+ text-align: center;
+ }
+.footer-legal p {
+ font-size: 11px; color: rgba(255,255,255,0.25);
+ line-height: 1.4;
+ }
 </style>
 </head>
 <body>
@@ -604,7 +634,7 @@
  </li>
  <li><a href="labarchitect.html">LabArchitect™</a></li>
  <li class="dropdown">
- <a href="index.html#cases">Case Studies ▾</a>
+ <a href="cases-diagnostics.html">Case Studies ▾</a>
  <div class="dropdown-menu">
   <a href="cases-diagnostics.html">Diagnostics &amp; Drug Development</a>
  <a href="cases-veterinary.html">Veterinary &amp; Environmental</a>
@@ -680,7 +710,7 @@
       <a href="#pillars" class="persona-card">
         <div class="persona-num">02</div>
         <h4>For Pharma &amp; CRO</h4>
-        <p>Method validation, technical-file authoring, regulator-facing submissions, or scientific oversight on a sponsor–CRO partnership.</p>
+        <p>Method validation, technical-file authoring, regulator-facing submissions, or scientific oversight on a sponsor-CRO partnership.</p>
         <div class="persona-link">Regulatory &amp; Method Science →</div>
       </a>
       <a href="#pillars" class="persona-card">
@@ -797,7 +827,7 @@
       </div>
       <div class="sector-card">
         <h4>Pharmaceutical &amp; CRO</h4>
-        <p>Method validation, GLP advisory, technical-file authoring, and scientific oversight for sponsor–CRO partnerships in preclinical and translational research.</p>
+        <p>Method validation, GLP advisory, technical-file authoring, and scientific oversight for sponsor-CRO partnerships in preclinical and translational research.</p>
       </div>
       <div class="sector-card">
         <h4>Veterinary &amp; Livestock</h4>
@@ -903,13 +933,13 @@
         </ul>
 
         <h4>Patents &amp; Inventions</h4>
-        <p>Patent holder for multiplex lateral flow technology capable of detecting 20–60 analytes simultaneously, and for a plaster-format microneedle diagnostic device. Recognised globally for contributions to bone health research.</p>
+        <p>Patent holder for multiplex lateral flow technology capable of detecting 20-60 analytes simultaneously, and for a plaster-format microneedle diagnostic device. Recognised globally for contributions to bone health research.</p>
 
         <h4>Selected Partnerships</h4>
         <ul>
-          <li>Fédération Équestre Internationale (FEI) — equine One Health programmes</li>
-          <li>Chester Zoo — conservation science &amp; wildlife health</li>
-          <li>Universität Bern — translational research collaboration</li>
+          <li>Fédération Équestre Internationale (FEI) - equine One Health programmes</li>
+          <li>Chester Zoo - conservation science &amp; wildlife health</li>
+          <li>Universität Bern - translational research collaboration</li>
         </ul>
 
         <h4>Media &amp; Public Engagement</h4>
@@ -965,21 +995,20 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-inner">
-    <div>
-      <strong style="color:var(--gold); font-family:'Playfair Display', serif; font-size:16px;">HH Global Holdings Ltd</strong><br>
-      73 Cornhill, London, EC3V 3QQ<br>
-      Company No. 16865238
-    </div>
-    <div>
-      <a href="index.html">Home</a> &middot;
-      <a href="company.html">Company</a> &middot;
-      <a href="labarchitect.html">LabArchitect™</a> &middot;
-      <a href="innovation-ip.html">Innovation &amp; IP</a> &middot;
-      <a href="company.html#articles">Publications</a>
-    </div>
-    <div>© 2026 HH Global Holdings Ltd. All rights reserved.</div>
-  </div>
+ <div class="footer-inner">
+ <div class="footer-brand">
+ <p>HH Global Holdings<br>Science, Evidence & Innovation</p>
+ </div>
+ <div class="footer-links">
+ <a href="company.html">Company</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+ <a href="company.html#articles">Publications</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+ <a href="index.html#contact">Contact</a>&nbsp;&nbsp;·&nbsp;&nbsp;
+ <a href="https://www.linkedin.com/company/110136969" target="_blank">LinkedIn</a>
+ </div>
+ <div class="footer-legal">
+ <p>HH Global Holdings Ltd<br>73 Cornhill, London, EC3V 3QQ<br>Company Registered in England & Wales · Company No. 16865238<br>© 2026 HH Global Holdings Ltd. All rights reserved.</p>
+ </div>
+ </div>
 </footer>
 
 <script>
