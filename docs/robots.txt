@@ -1,0 +1,8 @@
+# hhglobalholdings.com
+# Everything published here is intended to be public.
+# Nothing private is listed: a Disallow line is not access control, it is a
+# public advertisement of what you are hiding.
+User-agent: *
+Allow: /
+
+Sitemap: https://hhglobalholdings.com/sitemap.xml
