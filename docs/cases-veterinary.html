@@ -166,13 +166,13 @@
 
  /* ─ HERO ─ */
  .hero {
- min-height: 220px;
+ min-height: 650px;
  background:
  linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
  url('hero-bg-cells.jpg') center/cover no-repeat;
  display: flex; align-items: center; justify-content: flex-start;
  position: relative; overflow: hidden;
- padding: 48px 0 40px;
+ padding: 108px 0 60px;
  }
  .hero::before {
  content: '';
@@ -1343,6 +1343,38 @@
  .hero h1 { font-size: 28px !important; line-height: 1.15 !important; }
  .section-heading { font-size: 26px !important; line-height: 1.2 !important; }
 }
+
+ /* ─ ONE HEALTH DIAGRAM ─ */
+ .oh { width:100%;height:auto;display:block;font-family:'Inter',system-ui,sans-serif }
+ .oh-narrow { display:none }
+ .oh-c { fill:rgba(197,162,91,.05);stroke:#C5A25B;stroke-width:1.5;
+ stroke-dasharray:760;stroke-dashoffset:760;animation:ohDraw 14s ease-in-out infinite }
+ .oh-mk { fill:rgba(11,31,63,.95);stroke:#D8BF94;stroke-width:1.5;
+ opacity:0;animation:ohFade 14s ease-in-out infinite }
+ .oh-mn { fill:#D8BF94;font-size:9.5px;font-weight:700;text-anchor:middle;
+ opacity:0;animation:ohFade 14s ease-in-out infinite }
+ .oh-dm { fill:#C5A25B;font-size:10.5px;font-weight:700;letter-spacing:1.8px;text-anchor:middle }
+ .oh-n { fill:#C5A25B;font-size:11px;font-weight:700;letter-spacing:1.4px }
+ .oh-t { fill:#D8E0EE;font-size:12.5px;font-weight:600 }
+ .oh-s { fill:#9FB0CD;font-size:11px }
+ .oh-lb text { opacity:0;animation:ohFade 14s ease-in-out infinite }
+ .oh-d1 { animation-delay:0s } .oh-d2 { animation-delay:.45s } .oh-d3 { animation-delay:.9s }
+ .oh-m1 { animation-delay:1.5s } .oh-m2 { animation-delay:1.8s } .oh-m3 { animation-delay:2.1s }
+ .oh-l1 { animation-delay:2.4s } .oh-l2 { animation-delay:2.7s } .oh-l3 { animation-delay:3.0s }
+ .oh-l0 { animation-delay:1.3s }
+ .oh-cap { fill:#6F7F99;font-size:11px;font-style:italic;opacity:0;
+ animation:ohFade 14s ease-in-out infinite;animation-delay:3.4s }
+ @keyframes ohDraw { 0%{stroke-dashoffset:760} 20%{stroke-dashoffset:0}
+ 92%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+ @keyframes ohFade { 0%,10%{opacity:0} 24%{opacity:1} 92%{opacity:1} 100%{opacity:0} }
+ @media (max-width: 900px) {
+ .oh { max-width: 420px; margin: 0 auto; }
+ .oh-wide { display:none }
+ .oh-narrow { display:block }
+ }
+ @media (prefers-reduced-motion: reduce) {
+ .oh-c,.oh-mk,.oh-mn,.oh-lb text,.oh-cap { opacity:1;animation:none;stroke-dashoffset:0 }
+ }
 </style>
 </head>
 <body>
@@ -1383,12 +1415,52 @@
 <!-- HERO -->
 <section class="hero" style="background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%), url('hero-bg-cells.jpg') center/cover no-repeat;">
  <div class="hero-decor"></div>
- <div class="container" style="position:relative;z-index:2;">
+ <div class="hero-inner">
  <div class="hero-content">
  <div class="section-tag">Veterinary &amp; Environmental</div>
  <h1>Veterinary <em>&amp; Environmental</em></h1>
  <p>One Health science spanning veterinary immunotherapy, zoonotic disease control, arena air quality, and construction material validation. HH Global Holdings delivers evidence-based programmes where animal, human, and environmental health intersect.</p>
  </div>
+    <svg class="oh oh-wide" viewBox="195 85 505 455" role="img" aria-label="One Health. Three overlapping domains - human, animal and environmental health. Each of the three programmes sits on an intersection: the camel brucellosis vaccine between human and animal, equine sweet itch immunotherapy between animal and environmental, and the FEI arena air quality standards at the centre where all three meet.">
+      <circle class="oh-c oh-d1" cx="300" cy="190" r="95"/>
+      <circle class="oh-c oh-d2" cx="420" cy="190" r="95"/>
+      <circle class="oh-c oh-d3" cx="360" cy="290" r="95"/>
+      <circle class="oh-mk oh-m1" cx="360" cy="190" r="9"/>
+      <circle class="oh-mk oh-m2" cx="408" cy="255" r="9"/>
+      <circle class="oh-mk oh-m3" cx="360" cy="235" r="9"/>
+      <g class="oh-lb">
+        <text class="oh-dm oh-l0" x="264" y="135">HUMAN</text>
+        <text class="oh-dm oh-l0" x="465" y="135">ANIMAL</text>
+        <text class="oh-dm oh-l0" x="360" y="355">ENVIRONMENTAL</text>
+        <text class="oh-mn oh-m1" x="360" y="193.5">01</text>
+        <text class="oh-mn oh-m2" x="408" y="258.5">02</text>
+        <text class="oh-mn oh-m3" x="360" y="238.5">03</text>
+        <text class="oh-n oh-l1" x="215" y="420">01</text><text class="oh-t oh-l1" x="245" y="420">Brucellosis vaccine, camels (UAE)</text><text class="oh-s oh-l1" x="560" y="420">human + animal</text>
+        <text class="oh-n oh-l2" x="215" y="448">02</text><text class="oh-t oh-l2" x="245" y="448">Equine sweet itch immunotherapy</text><text class="oh-s oh-l2" x="560" y="448">animal + environmental</text>
+        <text class="oh-n oh-l3" x="215" y="476">03</text><text class="oh-t oh-l3" x="245" y="476">FEI arena air quality standards</text><text class="oh-s oh-l3" x="560" y="476">all three domains</text>
+      </g>
+      <text class="oh-cap" x="215" y="515">Every programme sits where the domains meet.</text>
+    </svg>
+    <svg class="oh oh-narrow" viewBox="0 0 360 530" role="img" aria-hidden="true" focusable="false">
+      <circle class="oh-c oh-d1" cx="140" cy="120" r="72"/>
+      <circle class="oh-c oh-d2" cx="230" cy="120" r="72"/>
+      <circle class="oh-c oh-d3" cx="185" cy="196" r="72"/>
+      <circle class="oh-mk oh-m1" cx="185" cy="120" r="8"/>
+      <circle class="oh-mk oh-m2" cx="217" cy="163" r="8"/>
+      <circle class="oh-mk oh-m3" cx="185" cy="145" r="8"/>
+      <g class="oh-lb">
+        <text class="oh-dm oh-l0" x="108" y="88">HUMAN</text>
+        <text class="oh-dm oh-l0" x="262" y="88">ANIMAL</text>
+        <text class="oh-dm oh-l0" x="185" y="238">ENVIRONMENTAL</text>
+        <text class="oh-mn oh-m1" x="185" y="123.5">01</text>
+        <text class="oh-mn oh-m2" x="217" y="166.5">02</text>
+        <text class="oh-mn oh-m3" x="185" y="148.5">03</text>
+        <text class="oh-n oh-l1" x="10" y="330">01</text><text class="oh-t oh-l1" x="34" y="330">Brucellosis vaccine, camels (UAE)</text><text class="oh-s oh-l1" x="34" y="348">human + animal</text>
+        <text class="oh-n oh-l2" x="10" y="390">02</text><text class="oh-t oh-l2" x="34" y="390">Equine sweet itch immunotherapy</text><text class="oh-s oh-l2" x="34" y="408">animal + environmental</text>
+        <text class="oh-n oh-l3" x="10" y="450">03</text><text class="oh-t oh-l3" x="34" y="450">FEI arena air quality standards</text><text class="oh-s oh-l3" x="34" y="468">all three domains</text>
+      </g>
+      <text class="oh-cap" x="10" y="508">Each sits where the domains meet.</text>
+    </svg>
  </div>
 </section>
 
