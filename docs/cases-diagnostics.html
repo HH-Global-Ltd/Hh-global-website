@@ -1323,6 +1323,32 @@
  .hero h1 { font-size: 28px !important; line-height: 1.15 !important; }
  .section-heading { font-size: 26px !important; line-height: 1.2 !important; }
 }
+
+ /* ─ MULTIPLEX PANEL DIAGRAM ─ */
+ .mx { width:100%;height:auto;display:block;font-family:'Inter',system-ui,sans-serif }
+ .mx-narrow { display:none }
+ .mx-on { fill:rgba(197,162,91,.16);stroke:#C5A25B;stroke-width:1.4;
+ opacity:0;animation:mxFade 14s ease-in-out infinite }
+ .mx-off { fill:none;stroke:#5C6B86;stroke-width:1.2;stroke-dasharray:3 3;
+ opacity:0;animation:mxFade 14s ease-in-out infinite;animation-delay:2.2s }
+ .mx-cnt { fill:#D8E0EE;font-size:15px;font-weight:600 }
+ .mx-cnt em { font-style:normal;fill:#C5A25B }
+ .mx-mk { fill:#C5A25B }
+ .mx-s { fill:#D8E0EE;font-size:12.5px }
+ .mx-lb text, .mx-lb rect { opacity:0;animation:mxFade 14s ease-in-out infinite }
+ .mx-l1 { animation-delay:2.5s } .mx-l2 { animation-delay:2.8s }
+ .mx-l3 { animation-delay:3.1s } .mx-l4 { animation-delay:3.4s }
+ .mx-cap { fill:#6F7F99;font-size:11px;font-style:italic;opacity:0;
+ animation:mxFade 14s ease-in-out infinite;animation-delay:3.7s }
+ @keyframes mxFade { 0%,8%{opacity:0} 20%{opacity:1} 92%{opacity:1} 100%{opacity:0} }
+ @media (max-width: 900px) {
+ .mx { max-width: 420px; margin: 0 auto; }
+ .mx-wide { display:none }
+ .mx-narrow { display:block }
+ }
+ @media (prefers-reduced-motion: reduce) {
+ .mx-on,.mx-off,.mx-lb text,.mx-lb rect,.mx-cap { opacity:1;animation:none }
+ }
 </style>
 </head>
 <body>
@@ -1369,8 +1395,52 @@
  <h1>Diagnostics <em>&amp; Drug Development</em></h1>
  <p>From first-in-class allergen platforms to pre-clinical biologic programmes, HH Global Holdings designs and delivers diagnostic technologies and drug characterisation programmes that move science from bench to clinical or commercial readiness.</p>
  </div>
- <div class="hero-images is-single">
- <div class="h-img"><picture><source srcset="assets/hero-diagnostics-d73f3b4e4a.webp" type="image/webp"><img src="assets/hero-diagnostics-0ca1989873.jpg" alt="Multiplex diagnostic instrumentation" width="992" height="800" loading="eager"></picture></div>
+    <svg class="mx mx-wide" viewBox="180 120 420 380" role="img" aria-label="Multiplex allergen panel. Thirteen of the fourteen EU-regulated allergens are detected on a single lateral flow device, shown as thirteen filled cells and one unfilled. Fifteen minutes to result, no instrument and no laboratory required, full intellectual property retained. Status: concept, in global licensing discussions.">
+      <rect class="mx-on" x="200" y="160" width="44" height="44" rx="2" style="animation-delay:0.35s"/>
+      <rect class="mx-on" x="254" y="160" width="44" height="44" rx="2" style="animation-delay:0.44s"/>
+      <rect class="mx-on" x="308" y="160" width="44" height="44" rx="2" style="animation-delay:0.53s"/>
+      <rect class="mx-on" x="362" y="160" width="44" height="44" rx="2" style="animation-delay:0.62s"/>
+      <rect class="mx-on" x="416" y="160" width="44" height="44" rx="2" style="animation-delay:0.71s"/>
+      <rect class="mx-on" x="470" y="160" width="44" height="44" rx="2" style="animation-delay:0.80s"/>
+      <rect class="mx-on" x="524" y="160" width="44" height="44" rx="2" style="animation-delay:0.89s"/>
+      <rect class="mx-on" x="200" y="214" width="44" height="44" rx="2" style="animation-delay:0.98s"/>
+      <rect class="mx-on" x="254" y="214" width="44" height="44" rx="2" style="animation-delay:1.07s"/>
+      <rect class="mx-on" x="308" y="214" width="44" height="44" rx="2" style="animation-delay:1.16s"/>
+      <rect class="mx-on" x="362" y="214" width="44" height="44" rx="2" style="animation-delay:1.25s"/>
+      <rect class="mx-on" x="416" y="214" width="44" height="44" rx="2" style="animation-delay:1.34s"/>
+      <rect class="mx-on" x="470" y="214" width="44" height="44" rx="2" style="animation-delay:1.43s"/>
+      <rect class="mx-off" x="524" y="214" width="44" height="44" rx="2"/>
+      <g class="mx-lb">
+        <text class="mx-cnt mx-l1" x="200" y="296" style="font-size:15px"><tspan fill="#C5A25B" font-weight="700">13</tspan> of the 14 EU-regulated allergens</text>
+        <rect class="mx-mk mx-l2" x="204" y="343" width="7" height="7"/><text class="mx-s mx-l2" x="226" y="350">15 minutes to result</text>
+        <rect class="mx-mk mx-l3" x="204" y="375" width="7" height="7"/><text class="mx-s mx-l3" x="226" y="382">No instrument, no laboratory</text>
+        <rect class="mx-mk mx-l4" x="204" y="407" width="7" height="7"/><text class="mx-s mx-l4" x="226" y="414">Full IP retained</text>
+      </g>
+      <text class="mx-cap" x="200" y="470">Status: concept, in global licensing discussions.</text>
+    </svg>
+    <svg class="mx mx-narrow" viewBox="0 0 360 390" role="img" aria-hidden="true" focusable="false">
+      <rect class="mx-on" x="33" y="70" width="36" height="36" rx="2" style="animation-delay:0.35s"/>
+      <rect class="mx-on" x="76" y="70" width="36" height="36" rx="2" style="animation-delay:0.44s"/>
+      <rect class="mx-on" x="119" y="70" width="36" height="36" rx="2" style="animation-delay:0.53s"/>
+      <rect class="mx-on" x="162" y="70" width="36" height="36" rx="2" style="animation-delay:0.62s"/>
+      <rect class="mx-on" x="205" y="70" width="36" height="36" rx="2" style="animation-delay:0.71s"/>
+      <rect class="mx-on" x="248" y="70" width="36" height="36" rx="2" style="animation-delay:0.80s"/>
+      <rect class="mx-on" x="291" y="70" width="36" height="36" rx="2" style="animation-delay:0.89s"/>
+      <rect class="mx-on" x="33" y="113" width="36" height="36" rx="2" style="animation-delay:0.98s"/>
+      <rect class="mx-on" x="76" y="113" width="36" height="36" rx="2" style="animation-delay:1.07s"/>
+      <rect class="mx-on" x="119" y="113" width="36" height="36" rx="2" style="animation-delay:1.16s"/>
+      <rect class="mx-on" x="162" y="113" width="36" height="36" rx="2" style="animation-delay:1.25s"/>
+      <rect class="mx-on" x="205" y="113" width="36" height="36" rx="2" style="animation-delay:1.34s"/>
+      <rect class="mx-on" x="248" y="113" width="36" height="36" rx="2" style="animation-delay:1.43s"/>
+      <rect class="mx-off" x="291" y="113" width="36" height="36" rx="2"/>
+      <g class="mx-lb">
+        <text class="mx-cnt mx-l1" x="8" y="186" style="font-size:14px"><tspan fill="#C5A25B" font-weight="700">13</tspan> of the 14 EU-regulated allergens</text>
+        <rect class="mx-mk mx-l2" x="16" y="233" width="7" height="7"/><text class="mx-s mx-l2" x="38" y="240">15 minutes to result</text>
+        <rect class="mx-mk mx-l3" x="16" y="268" width="7" height="7"/><text class="mx-s mx-l3" x="38" y="275">No instrument, no laboratory</text>
+        <rect class="mx-mk mx-l4" x="16" y="303" width="7" height="7"/><text class="mx-s mx-l4" x="38" y="310">Full IP retained</text>
+      </g>
+      <text class="mx-cap" x="8" y="368">Status: concept, in global licensing discussions.</text>
+    </svg>
  </div>
  </div>
 </section>
