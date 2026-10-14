@@ -53,11 +53,11 @@
  }
 
  /* ─ TYPOGRAPHY ─ */
- h1, h2, h3, h4 { font-family: 'Playfair Display', serif; font-weight: 500; line-height: 1.2; }
+ h1, h2, h3, h3.subhead { font-family: 'Playfair Display', serif; font-weight: 500; line-height: 1.2; }
  h1 { font-size: clamp(26px, 3.5vw, 44px); }
  h2 { font-size: clamp(18px, 2.6vw, 32px); }
  h3 { font-size: clamp(16px, 1.8vw, 21px); }
- h4 { font-size: 18px; font-weight: 600; font-family: 'Inter', sans-serif; }
+ h3.subhead { font-size: 18px; font-weight: 600; font-family: 'Inter', sans-serif; }
  p { font-size: 15px; line-height: 1.4; color: var(--text-mid); }
  .body-lg { font-size: 16px; color: var(--text-mid); }
  .body-sm { font-size: 14px; color: var(--text-light); }
@@ -309,7 +309,7 @@
  line-height: 1;
  margin-bottom: 12px;
  }
- .pillar-card h4 {
+ .pillar-card h3.subhead {
  color: var(--navy);
  font-size: 18px;
  font-weight: 600;
@@ -464,7 +464,7 @@
  background: var(--white);
  }
  .market-card:hover { border-color: var(--gold); }
- .market-card h4 { color: var(--navy); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; line-height: 1.2; }
+ .market-card h3.subhead { color: var(--navy); margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; line-height: 1.2; }
  .market-card p { font-size: 13px; line-height: 1.4; }
 
  /* ─ CASE STUDIES ─ */
@@ -492,7 +492,7 @@
  color: var(--gold);
  margin-bottom: 10px;
  }
- .case-card h4 { color: var(--navy); margin-bottom: 14px; font-size: 18px; line-height: 1.2; }
+ .case-card h3.subhead { color: var(--navy); margin-bottom: 14px; font-size: 18px; line-height: 1.2; }
  .case-card p { font-size: 14px; line-height: 1.4; color: var(--text-light); }
 
  /* ─ ENGAGEMENT ─ */
@@ -523,7 +523,7 @@
  font-family: 'Playfair Display', serif;
  font-size: 18px; font-weight: 600;
  }
- .engage-step h4 {
+ .engage-step h3.subhead {
  font-size: 14px; margin-bottom: 6px; text-align: center;
  color: var(--navy);
  }
@@ -970,7 +970,7 @@
  color: #2D3E52;
  margin-bottom: 18px;
  }
- .subsidiary-capabilities h4 {
+ .subsidiary-capabilities h3.subhead {
  color: var(--navy);
  font-size: 13px;
  font-weight: 700;
@@ -1167,6 +1167,11 @@
  overflow: hidden;
  border-radius: 6px;
  }
+ .hero-images .h-img picture {
+ display: block;
+ width: 100%;
+ height: 100%;
+ }
  .hero-images .h-img img {
  width: 100%;
  height: 100%;
@@ -1333,7 +1338,7 @@
    padding: 28px 24px;
    transition: all 0.25s;
  }
- .compare-col h4 {
+ .compare-col h3.subhead {
    font-family: 'Playfair Display', serif;
    font-weight: 500;
    color: var(--text-mid);
@@ -1369,7 +1374,7 @@
    border-top: 3px solid var(--gold);
    box-shadow: 0 8px 30px rgba(201,170,125,0.10);
  }
- .compare-feature h4 { color: var(--navy); font-size: 22px; }
+ .compare-feature h3.subhead { color: var(--navy); font-size: 22px; }
  .compare-feature .compare-line { color: var(--gold); }
  .compare-feature li { color: #1A1A2E; font-weight: 500; }
  .compare-feature li::before { content: '✓'; color: var(--gold); font-size: 13px; top: 5px; }
@@ -1384,7 +1389,7 @@
 <nav>
  <div class="nav-inner">
  <a href="index.html" class="nav-logo">
- <img src="assets/hh-logo-f0375cde34.png" alt="HH Global" decoding="async">
+ <img src="assets/hh-logo-f0375cde34.png" alt="HH Global" decoding="async" width="501" height="498">
  </a>
  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
  <span></span><span></span><span></span>
@@ -1428,10 +1433,10 @@
  </div>
  </div>
  <div class="hero-images">
- <div class="h-img"><img src="assets/index-a7a062b846.jpg" alt="HH Global research team at work" loading="eager"></div>
- <div class="h-img"><img src="assets/index-dc44c92c65.jpg" alt="PCR workstation" loading="eager"></div>
- <div class="h-img"><img src="assets/index-0d3af51554.jpg" alt="Researcher at biosafety hood" loading="eager"></div>
- <div class="h-img"><img src="assets/index-9bf025ea71.jpg" alt="Presenting research outcomes" loading="eager"></div>
+ <div class="h-img"><picture><source srcset="assets/hero-accredited-lab-2bc1485d24.webp" type="image/webp"><img src="assets/hero-accredited-lab-5b3914adf2.jpg" alt="Accredited analytical laboratory" width="800" height="560" loading="eager"></picture></div>
+ <div class="h-img"><picture><source srcset="assets/hero-sam-cabinet-c1e9e4ae71.webp" type="image/webp"><img src="assets/hero-sam-cabinet-a1e2c54c46.jpg" alt="Sample preparation in a Class II biological safety cabinet" width="800" height="560" loading="eager"></picture></div>
+ <div class="h-img"><picture><source srcset="assets/hero-instrumentation-c745998424.webp" type="image/webp"><img src="assets/hero-instrumentation-497f7c49a9.jpg" alt="Multiplex diagnostic instrumentation" width="800" height="560" loading="eager"></picture></div>
+ <div class="h-img"><picture><source srcset="assets/hero-evidence-review-3d63479b1d.webp" type="image/webp"><img src="assets/hero-evidence-review-d8808f2e73.jpg" alt="Regulatory evidence review" width="800" height="560" loading="eager"></picture></div>
  </div>
  </div>
 
@@ -1459,7 +1464,7 @@
  <div class="pillar-card fade-in" style="padding:28px;border-top:3px solid var(--gold);position:relative;">
  <div class="persona-num-home">01</div>
  <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Embedded Scientific Capability</div>
- <h4>Early-Stage Companies</h4>
+ <h3 class="subhead">Early-Stage Companies</h3>
  <p>You have the science but not the credentialled team to validate or advance it. You need real scientists, not a consultancy. Whether it is systematic reviews, technical advisory, or R&amp;D without the overhead of an in-house lab, we become your scientific function.</p>
  <p style="font-size:12px;color:#6B7280;margin-top:12px;font-style:italic;">SMEs · Biotech startups · Environmental consultancies · Independent researchers</p>
  <a href="scientific-practice.html" class="who-card-link">Scientific Practice →</a>
@@ -1468,7 +1473,7 @@
  <div class="pillar-card fade-in" style="padding:28px;border-top:3px solid var(--gold);position:relative;">
  <div class="persona-num-home">02</div>
  <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Lab Build &amp; Accreditation</div>
- <h4>Organisations Building or Upgrading Labs</h4>
+ <h3 class="subhead">Organisations Building or Upgrading Labs</h3>
  <p>We design laboratories around what the client needs to achieve, regulatory compliance is structural, not an afterthought. Labs built to ISO 17025/15189 from the ground up, not retrofitted after the fact. From equipment specification and Standard Operating Procedure (SOP) development to UK Accreditation Service (UKAS) audit preparation, we have built accredited labs from empty rooms, designed for compliance from day one.</p>
  <p style="font-size:12px;color:#6B7280;margin-top:12px;font-style:italic;">NHS Trusts · Universities · Overseas health ministries · Private laboratories</p>
  <a href="labarchitect.html" class="who-card-link">Explore LabArchitect™ →</a>
@@ -1477,7 +1482,7 @@
  <div class="pillar-card fade-in" style="padding:28px;border-top:3px solid var(--gold);position:relative;">
  <div class="persona-num-home">03</div>
  <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Diagnostic Development</div>
- <h4>Pharma, Biotech &amp; Agri-Health Companies</h4>
+ <h3 class="subhead">Pharma, Biotech &amp; Agri-Health Companies</h3>
  <p>You have a diagnostic concept, an assay, a lateral flow test, a genomic panel, or an environmental sensor, and you need validation, clinical or field evidence, and a regulatory pathway to certification for the UK and European markets (UKCA and CE marks) or beyond. From women's health and menopause biomarkers to camelid genomics and population-scale research programmes, we take diagnostics from concept to compliant submission across human, animal, and environmental applications.</p>
  <p style="font-size:12px;color:#6B7280;margin-top:12px;font-style:italic;">Pharmaceutical companies · Biotech startups · Drug discovery companies · Women's health companies · Population health programmes · Agricultural diagnostics · Veterinary health companies</p>
  <a href="scientific-practice.html#pillars" class="who-card-link">Diagnostic &amp; Evidence Sciences →</a>
@@ -1486,7 +1491,7 @@
  <div class="pillar-card fade-in" style="padding:28px;border-top:3px solid var(--gold);position:relative;">
  <div class="persona-num-home">04</div>
  <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">UK Market Entry Support</div>
- <h4>International Organisations &amp; Investors</h4>
+ <h3 class="subhead">International Organisations &amp; Investors</h3>
  <p>You are entering a new market, the UK, UAE, Europe, or beyond, and you need local scientific credibility, regulatory alignment, and laboratory capability to make it work. Whether you are a government agency, family office, or investment vehicle establishing diagnostic infrastructure, or an international programme requiring species-specific genomics capability, equine, camelid, or otherwise, we provide the scientific and operational infrastructure your expansion requires.</p>
  <p style="font-size:12px;color:#6B7280;margin-top:12px;font-style:italic;">Government health agencies · International distributors · Family offices · Overseas health ministries · UAE &amp; Gulf region genomics programmes</p>
  <a href="company.html#contact" class="who-card-link">Get in Touch →</a>
@@ -1504,7 +1509,7 @@
 
    <div class="compare-grid">
      <div class="compare-col">
-       <h4>Industrial CRO</h4>
+       <h3 class="subhead">Industrial CRO</h3>
        <p class="compare-line">Scale &amp; capacity</p>
        <ul>
          <li>High throughput</li>
@@ -1515,7 +1520,7 @@
        </ul>
      </div>
      <div class="compare-col compare-feature">
-       <h4>HH Global Holdings</h4>
+       <h3 class="subhead">HH Global Holdings</h3>
        <p class="compare-line">Specialist depth with infrastructure</p>
        <ul>
          <li>Custom assay &amp; method design</li>
@@ -1526,7 +1531,7 @@
        </ul>
      </div>
      <div class="compare-col">
-       <h4>Solo Scientist</h4>
+       <h3 class="subhead">Solo Scientist</h3>
        <p class="compare-line">Depth without delivery</p>
        <ul>
          <li>Deep specialist knowledge</li>
@@ -1548,17 +1553,17 @@
  <div class="pillars-grid">
  <div class="pillar-card fade-in" style="text-align:center;padding:32px;">
  <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C5A25B 0%,#0B1F3F 100%);display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><span style="color:#fff;font-size:20px;font-weight:700;">01</span></div>
- <h4>The Full Pipeline</h4>
+ <h3 class="subhead">The Full Pipeline</h3>
  <p>Most CROs can take you part of the way. The gap between where one ends and the next begins is where programmes stall. We cover the entire development pathway, from biomarker identification and preclinical work through to ISO 17025/15189 compliance. One partner, no handoff gaps, no restarts.</p>
  </div>
  <div class="pillar-card fade-in" style="text-align:center;padding:32px;">
  <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C5A25B 0%,#0B1F3F 100%);display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><span style="color:#fff;font-size:20px;font-weight:700;">02</span></div>
- <h4>Targeted, Not Spray-and-Hope</h4>
+ <h3 class="subhead">Targeted, Not Spray-and-Hope</h3>
  <p>In vitro to in vivo translation is difficult, costly, and often fails when it relies on broad-spectrum assumptions. We identify the lock, find the key model, and replicate the mechanism, targeted development from day one. That is why our clients reach submission faster, with fewer failed iterations.</p>
  </div>
  <div class="pillar-card fade-in" style="text-align:center;padding:32px;">
  <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#C5A25B 0%,#0B1F3F 100%);display:flex;align-items:center;justify-content:center;margin-bottom:16px;"><span style="color:#fff;font-size:20px;font-weight:700;">03</span></div>
- <h4>Regulatory-First by Design</h4>
+ <h3 class="subhead">Regulatory-First by Design</h3>
  <p>Navigating regulatory requirements is one of the most stressful stages of development, and the most expensive to get wrong. We build every programme to meet compliance from day one, not as an afterthought. The result: evidence packages that work first time, submissions without surprises, and no expensive rework.</p>
  </div>
  </div>
@@ -1624,27 +1629,27 @@
  <div class="engage-steps">
  <div class="engage-step">
  <div class="engage-icon">1</div>
- <h4>Discovery</h4>
+ <h3 class="subhead">Discovery</h3>
  <p>Initial scoping, needs assessment, feasibility, and programme definition with your team.</p>
  </div>
  <div class="engage-step">
  <div class="engage-icon">2</div>
- <h4>Preclinical & Research</h4>
+ <h3 class="subhead">Preclinical & Research</h3>
  <p>Literature review, systematic evaluation, laboratory work, biomarker identification, and early-stage development.</p>
  </div>
  <div class="engage-step">
  <div class="engage-icon">3</div>
- <h4>Validation</h4>
+ <h3 class="subhead">Validation</h3>
  <p>Testing, optimisation, statistical analysis, reproducibility, and peer-reviewed evidence generation.</p>
  </div>
  <div class="engage-step">
  <div class="engage-icon">4</div>
- <h4>Regulatory</h4>
+ <h3 class="subhead">Regulatory</h3>
  <p>ISO 17025/15189 compliance, MHRA and CE/UKCA regulatory submissions, compliance documentation, and expert evidence packages.</p>
  </div>
  <div class="engage-step">
  <div class="engage-icon">5</div>
- <h4>Deployment</h4>
+ <h3 class="subhead">Deployment</h3>
  <p>Commercialisation, manufacturing partnerships, scaling, ongoing support, and real-world monitoring across target markets.</p>
  </div>
  </div>
