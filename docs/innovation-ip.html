@@ -165,7 +165,7 @@
 
  /* ─ HERO ─ */
  .hero {
- min-height: 280px;
+ min-height: 580px;
  background:
  linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
  url('hero-bg-cells.jpg') center/cover no-repeat;
@@ -1325,6 +1325,44 @@
  .hero h1 { font-size: 28px !important; line-height: 1.15 !important; }
  .section-heading { font-size: 26px !important; line-height: 1.2 !important; }
 }
+
+ /* ─ INNOVATION PIPELINE DIAGRAM ─ */
+ .ip { width:100%;height:auto;display:block;font-family:'Inter',system-ui,sans-serif }
+ .ip-narrow { display:none }
+ .ip-w { fill:none;stroke:#C5A25B;stroke-width:1.6;stroke-linecap:square;
+ stroke-dasharray:1400;stroke-dashoffset:1400;animation:ipDraw 14s ease-in-out infinite }
+ .ip-loop { fill:none;stroke:#D8BF94;stroke-width:1.4;stroke-dasharray:5 6;
+ opacity:0;animation:ipFade 14s ease-in-out infinite;animation-delay:1.4s }
+ .ip-node { fill:rgba(11,31,63,.9);stroke:#C5A25B;stroke-width:1.4;
+ opacity:0;animation:ipFade 14s ease-in-out infinite }
+ .ip-node-end { fill:rgba(197,162,91,.14) }
+ .ip-grid { opacity:0;animation:ipFade 14s ease-in-out infinite }
+ .ip-n { fill:#C5A25B;font-size:11px;font-weight:700;letter-spacing:1.6px }
+ .ip-t { fill:#D8E0EE;font-size:15px;font-weight:600;letter-spacing:.4px }
+ .ip-s { fill:#9FB0CD;font-size:11.5px }
+ .ip-ch { fill:#D8BF94;font-size:10px;font-weight:700;letter-spacing:1.6px }
+ .ip-lb text { opacity:0;animation:ipFade 14s ease-in-out infinite }
+ .ip-d1 { animation-delay:0s } .ip-d2 { animation-delay:.3s }
+ .ip-d3 { animation-delay:.6s } .ip-d4 { animation-delay:.9s }
+ .ip-d5 { animation-delay:1.2s }
+ .ip-l1 { animation-delay:1.5s } .ip-l2 { animation-delay:1.8s }
+ .ip-l3 { animation-delay:2.1s } .ip-l4 { animation-delay:2.4s }
+ .ip-l5 { animation-delay:2.7s } .ip-l6 { animation-delay:3.1s }
+ .ip-dot { fill:#fff;filter:drop-shadow(0 0 6px rgba(216,191,148,.9)) }
+ .ip-cap { fill:#6F7F99;font-size:11px;font-style:italic;opacity:0;
+ animation:ipFade 14s ease-in-out infinite;animation-delay:3.4s }
+ @keyframes ipDraw { 0%{stroke-dashoffset:1400} 18%{stroke-dashoffset:0}
+ 92%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+ @keyframes ipFade { 0%,10%{opacity:0} 22%{opacity:1} 92%{opacity:1} 100%{opacity:0} }
+ @media (max-width: 900px) {
+ .ip { max-width: 420px; margin: 0 auto; }
+ .ip-wide { display:none }
+ .ip-narrow { display:block }
+ }
+ @media (prefers-reduced-motion: reduce) {
+ .ip-w,.ip-loop,.ip-node,.ip-grid,.ip-lb text,.ip-cap { opacity:1;animation:none;stroke-dashoffset:0 }
+ .ip-dot { display:none }
+ }
 </style>
 </head>
 <body>
@@ -1365,12 +1403,68 @@
 <!-- HERO -->
 <section class="hero" style="background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%), url('hero-bg-cells.jpg') center/cover no-repeat;">
  <div class="hero-decor"></div>
- <div class="container" style="position:relative;z-index:2;">
+ <div class="hero-inner">
  <div class="hero-content">
  <div class="section-tag">Translational Science &amp; Applied Innovation</div>
  <h1 >Innovation Built on<br><em>Deep Scientific Capability.</em></h1>
  <p >HH Global Holdings' innovation programme is the output of deep translational science, evidence generation and regulatory understanding. Where the science demands a new platform, methodology or framework, we build it: rapid diagnostics that translate laboratory rigour into point-of-care use, assay platforms that accelerate biomarker discovery, and bioinformatics architectures that turn complex data into regulatory-grade evidence. Each programme below is grounded in a specific scientific problem and a defined evidentiary requirement.</p>
  </div>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+      <defs>
+        <pattern id="ipGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M30 0 L0 0 0 30" fill="none" stroke="#C5A25B" stroke-width=".4" opacity=".13"/>
+        </pattern>
+        <marker id="ipArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#D8BF94"/>
+        </marker>
+      </defs>
+    </svg>
+    <svg class="ip ip-wide" viewBox="110 45 610 545" role="img" aria-label="The innovation pipeline. A scientific problem that no off-the-shelf method closes, an evidentiary requirement defined before the build begins, the platform built to meet it, validation measured against that requirement, and a licensable asset with the intellectual property retained. Validation returns to the requirement set at the start.">
+      <rect class="ip-grid" x="110" y="45" width="610" height="545" fill="url(#ipGrid)"/>
+      <path class="ip-w ip-d1" id="ipSpine" d="M170 80 L170 440"/>
+      <rect class="ip-node ip-d1" x="165.5" y="75.5" width="9" height="9"/>
+      <rect class="ip-node ip-d2" x="165.5" y="165.5" width="9" height="9"/>
+      <rect class="ip-node ip-d3" x="165.5" y="255.5" width="9" height="9"/>
+      <rect class="ip-node ip-d4" x="165.5" y="345.5" width="9" height="9"/>
+      <rect class="ip-node ip-node-end ip-d5" x="163.5" y="433.5" width="13" height="13"/>
+      <path class="ip-loop" d="M170 350 L140 350 L140 170 L170 170" marker-end="url(#ipArrow)"/>
+      <g class="ip-lb">
+        <text class="ip-n ip-l1" x="202" y="84">01</text><text class="ip-t ip-l1" x="232" y="84">Scientific problem</text><text class="ip-s ip-l1" x="440" y="84">A gap no off-the-shelf method closes</text>
+        <text class="ip-n ip-l2" x="202" y="174">02</text><text class="ip-t ip-l2" x="232" y="174">Evidentiary requirement</text><text class="ip-s ip-l2" x="440" y="174">Defined before the build begins</text>
+        <text class="ip-n ip-l3" x="202" y="264">03</text><text class="ip-t ip-l3" x="232" y="264">Platform</text><text class="ip-s ip-l3" x="440" y="264">Diagnostic, assay or bioinformatic</text>
+        <text class="ip-n ip-l4" x="202" y="354">04</text><text class="ip-t ip-l4" x="232" y="354">Validation</text><text class="ip-s ip-l4" x="440" y="354">Measured against the requirement</text>
+        <text class="ip-n ip-l5" x="202" y="444">05</text><text class="ip-t ip-l5" x="232" y="444">Licensable asset</text><text class="ip-s ip-l5" x="440" y="444">IP retained, ready to licence</text>
+        <text class="ip-ch ip-l6" transform="rotate(-90 128 260)" x="128" y="260" text-anchor="middle">VALIDATED AGAINST</text>
+      </g>
+      <circle class="ip-dot" r="4.5"><animateMotion dur="14s" repeatCount="indefinite"
+        keyPoints="0;0;0.25;0.25;0.5;0.5;0.75;0.75;1;1"
+        keyTimes="0;0.30;0.38;0.46;0.54;0.62;0.70;0.78;0.86;1" calcMode="linear">
+        <mpath href="#ipSpine"/></animateMotion></circle>
+      <text class="ip-cap" x="130" y="570">The requirement is set before the build begins.</text>
+    </svg>
+    <svg class="ip ip-narrow" viewBox="0 0 360 640" role="img" aria-hidden="true" focusable="false">
+      <rect class="ip-grid" x="0" y="0" width="360" height="640" fill="url(#ipGrid)"/>
+      <path class="ip-w ip-d1" id="ipSpineM" d="M54 40 L54 520"/>
+      <rect class="ip-node ip-d1" x="49.5" y="35.5" width="9" height="9"/>
+      <rect class="ip-node ip-d2" x="49.5" y="155.5" width="9" height="9"/>
+      <rect class="ip-node ip-d3" x="49.5" y="275.5" width="9" height="9"/>
+      <rect class="ip-node ip-d4" x="49.5" y="395.5" width="9" height="9"/>
+      <rect class="ip-node ip-node-end ip-d5" x="47.5" y="513.5" width="13" height="13"/>
+      <path class="ip-loop" d="M54 400 L28 400 L28 160 L54 160" marker-end="url(#ipArrow)"/>
+      <g class="ip-lb">
+        <text class="ip-n ip-l1" x="76" y="44">01</text><text class="ip-t ip-l1" x="106" y="44">Scientific problem</text><text class="ip-s ip-l1" x="76" y="66">A gap no off-the-shelf method closes</text>
+        <text class="ip-n ip-l2" x="76" y="164">02</text><text class="ip-t ip-l2" x="106" y="164">Evidentiary requirement</text><text class="ip-s ip-l2" x="76" y="186">Defined before the build begins</text>
+        <text class="ip-n ip-l3" x="76" y="284">03</text><text class="ip-t ip-l3" x="106" y="284">Platform</text><text class="ip-s ip-l3" x="76" y="306">Diagnostic, assay or bioinformatic</text>
+        <text class="ip-n ip-l4" x="76" y="404">04</text><text class="ip-t ip-l4" x="106" y="404">Validation</text><text class="ip-s ip-l4" x="76" y="426">Measured against the requirement</text>
+        <text class="ip-n ip-l5" x="76" y="524">05</text><text class="ip-t ip-l5" x="106" y="524">Licensable asset</text><text class="ip-s ip-l5" x="76" y="546">IP retained, ready to licence</text>
+        <text class="ip-ch ip-l6" transform="rotate(-90 18 280)" x="18" y="280" text-anchor="middle">VALIDATED AGAINST</text>
+      </g>
+      <circle class="ip-dot" r="4.5"><animateMotion dur="14s" repeatCount="indefinite"
+        keyPoints="0;0;0.25;0.25;0.5;0.5;0.75;0.75;1;1"
+        keyTimes="0;0.30;0.38;0.46;0.54;0.62;0.70;0.78;0.86;1" calcMode="linear">
+        <mpath href="#ipSpineM"/></animateMotion></circle>
+      <text class="ip-cap" x="0" y="620">Requirement set before the build.</text>
+    </svg>
  </div>
 </section>
 
