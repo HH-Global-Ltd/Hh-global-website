@@ -133,6 +133,7 @@
         url('hero-bg-cells.jpg') center/cover no-repeat;
       display: grid; align-content: center;
       position: relative; overflow: hidden;
+      min-height: 560px;
       padding: 120px 0 64px;
     }
     .hero > .container { width: 100%; }
@@ -612,6 +613,47 @@
  font-size: 11px; color: rgba(255,255,255,0.25);
  line-height: 1.4;
  }
+
+    /* ─ HERO WITH SIDE DIAGRAM ─ */
+    .hero-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px;
+      align-items: center; max-width: var(--max); margin: 0 auto;
+      padding: 0 32px; width: 100%; position: relative; z-index: 2; }
+    /* ─ EVIDENCE CHAIN DIAGRAM ─ */
+    .sp { width:100%;height:auto;display:block;font-family:'Inter',system-ui,sans-serif }
+    .sp-narrow { display:none }
+    .sp-w { fill:none;stroke:#C5A25B;stroke-width:1.6;stroke-linecap:square;
+      stroke-dasharray:1400;stroke-dashoffset:1400;animation:spDraw 14s ease-in-out infinite }
+    .sp-node { fill:rgba(11,31,63,.9);stroke:#C5A25B;stroke-width:1.4;
+      opacity:0;animation:spFade 14s ease-in-out infinite }
+    .sp-node-end { fill:rgba(197,162,91,.14) }
+    .sp-grid { opacity:0;animation:spFade 14s ease-in-out infinite }
+    .sp-n { fill:#C5A25B;font-size:11px;font-weight:700;letter-spacing:1.6px }
+    .sp-t { fill:#D8E0EE;font-size:15px;font-weight:600;letter-spacing:.4px }
+    .sp-s { fill:#9FB0CD;font-size:11.5px }
+    .sp-ch { fill:#C5A25B;font-size:10.5px;font-weight:700;letter-spacing:1.8px }
+    .sp-lb text { opacity:0;animation:spFade 14s ease-in-out infinite }
+    .sp-d1 { animation-delay:0s } .sp-d2 { animation-delay:.3s }
+    .sp-d3 { animation-delay:.6s } .sp-d4 { animation-delay:.9s }
+    .sp-d5 { animation-delay:1.2s }
+    .sp-l1 { animation-delay:1.5s } .sp-l2 { animation-delay:1.8s }
+    .sp-l3 { animation-delay:2.1s } .sp-l4 { animation-delay:2.4s }
+    .sp-l5 { animation-delay:2.7s } .sp-l6 { animation-delay:3.1s }
+    .sp-dot { fill:#fff;filter:drop-shadow(0 0 6px rgba(216,191,148,.9)) }
+    .sp-cap { fill:#6F7F99;font-size:11px;font-style:italic;opacity:0;
+      animation:spFade 14s ease-in-out infinite;animation-delay:3.4s }
+    @keyframes spDraw { 0%{stroke-dashoffset:1400} 18%{stroke-dashoffset:0}
+      92%{stroke-dashoffset:0;opacity:1} 100%{stroke-dashoffset:0;opacity:0} }
+    @keyframes spFade { 0%,10%{opacity:0} 22%{opacity:1} 92%{opacity:1} 100%{opacity:0} }
+    @media (max-width: 880px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 32px; }
+      .sp { max-width: 420px; margin: 0 auto; }
+      .sp-wide { display:none }
+      .sp-narrow { display:block }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .sp-w,.sp-node,.sp-grid,.sp-lb text,.sp-cap { opacity:1;animation:none;stroke-dashoffset:0 }
+      .sp-dot { display:none }
+    }
 </style>
 </head>
 <body>
@@ -652,7 +694,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="container">
+  <div class="hero-inner">
     <div class="hero-content">
       <div class="section-tag">Scientific Practice</div>
       <h1>Defensible Science.<br><em>Independent of Outcome.</em></h1>
@@ -662,6 +704,66 @@
         <a href="#scientist" class="btn btn-outline">Lead Scientific Adviser</a>
       </div>
     </div>
+    <svg class="sp sp-wide" viewBox="110 45 610 545" role="img"
+      aria-label="The evidence chain. Five stages linked in sequence: question, method, measurement, analysis, finding. Each names the control that anchors it before the result is known - scope fixed before data is seen, method accredited to ISO 17025, calibrated instruments on traceable standards, analysis blinded to the expected result, and a peer-reviewed finding with the audit trail intact. A challenge arriving at the finding does not move it.">
+      <defs>
+        <pattern id="spGrid" width="30" height="30" patternUnits="userSpaceOnUse">
+          <path d="M30 0 L0 0 0 30" fill="none" stroke="#C5A25B" stroke-width=".4" opacity=".13"/>
+        </pattern>
+        <marker id="spArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="#C5A25B"/>
+        </marker>
+      </defs>
+      <rect class="sp-grid" x="110" y="45" width="610" height="545" fill="url(#spGrid)"/>
+
+      <path class="sp-w sp-d1" id="spSpine" d="M150 80 L150 440"/>
+      <rect class="sp-node sp-d1" x="145.5" y="75.5" width="9" height="9"/>
+      <rect class="sp-node sp-d2" x="145.5" y="165.5" width="9" height="9"/>
+      <rect class="sp-node sp-d3" x="145.5" y="255.5" width="9" height="9"/>
+      <rect class="sp-node sp-d4" x="145.5" y="345.5" width="9" height="9"/>
+      <rect class="sp-node sp-node-end sp-d5" x="143.5" y="433.5" width="13" height="13"/>
+
+      <path class="sp-w sp-d5" d="M150 535 L150 458" marker-end="url(#spArrow)"/>
+
+      <g class="sp-lb">
+        <text class="sp-n sp-l1" x="182" y="84">01</text><text class="sp-t sp-l1" x="212" y="84">Question</text><text class="sp-s sp-l1" x="350" y="84">Scope and endpoints fixed before any data is seen</text>
+        <text class="sp-n sp-l2" x="182" y="174">02</text><text class="sp-t sp-l2" x="212" y="174">Method</text><text class="sp-s sp-l2" x="350" y="174">Validated and accredited to ISO 17025</text>
+        <text class="sp-n sp-l3" x="182" y="264">03</text><text class="sp-t sp-l3" x="212" y="264">Measurement</text><text class="sp-s sp-l3" x="350" y="264">Calibrated instruments, traceable standards</text>
+        <text class="sp-n sp-l4" x="182" y="354">04</text><text class="sp-t sp-l4" x="212" y="354">Analysis</text><text class="sp-s sp-l4" x="350" y="354">Blinded to the expected result</text>
+        <text class="sp-n sp-l5" x="182" y="444">05</text><text class="sp-t sp-l5" x="212" y="444">Finding</text><text class="sp-s sp-l5" x="350" y="444">Peer-reviewed, with the audit trail intact</text>
+        <text class="sp-ch sp-l6" x="172" y="520">CHALLENGE</text>
+      </g>
+
+      <circle class="sp-dot" r="4.5"><animateMotion dur="14s" repeatCount="indefinite"
+        keyPoints="0;0;0.25;0.25;0.5;0.5;0.75;0.75;1;1"
+        keyTimes="0;0.30;0.38;0.46;0.54;0.62;0.70;0.78;0.86;1" calcMode="linear">
+        <mpath href="#spSpine"/></animateMotion></circle>
+
+      <text class="sp-cap" x="130" y="570">Every control is set before the result is known. The finding does not move.</text>
+    </svg>
+    <svg class="sp sp-narrow" viewBox="0 0 360 672" role="img" aria-hidden="true" focusable="false">
+      <rect class="sp-grid" x="0" y="0" width="360" height="672" fill="url(#spGrid)"/>
+      <path class="sp-w sp-d1" id="spSpineM" d="M24 40 L24 520"/>
+      <rect class="sp-node sp-d1" x="19.5" y="35.5" width="9" height="9"/>
+      <rect class="sp-node sp-d2" x="19.5" y="155.5" width="9" height="9"/>
+      <rect class="sp-node sp-d3" x="19.5" y="275.5" width="9" height="9"/>
+      <rect class="sp-node sp-d4" x="19.5" y="395.5" width="9" height="9"/>
+      <rect class="sp-node sp-node-end sp-d5" x="17.5" y="513.5" width="13" height="13"/>
+      <path class="sp-w sp-d5" d="M24 614 L24 538" marker-end="url(#spArrow)"/>
+      <g class="sp-lb">
+        <text class="sp-n sp-l1" x="46" y="44">01</text><text class="sp-t sp-l1" x="76" y="44">Question</text><text class="sp-s sp-l1" x="46" y="66">Scope and endpoints fixed</text><text class="sp-s sp-l1" x="46" y="82">before any data is seen</text>
+        <text class="sp-n sp-l2" x="46" y="164">02</text><text class="sp-t sp-l2" x="76" y="164">Method</text><text class="sp-s sp-l2" x="46" y="186">Validated and accredited to ISO 17025</text>
+        <text class="sp-n sp-l3" x="46" y="284">03</text><text class="sp-t sp-l3" x="76" y="284">Measurement</text><text class="sp-s sp-l3" x="46" y="306">Calibrated instruments,</text><text class="sp-s sp-l3" x="46" y="322">traceable standards</text>
+        <text class="sp-n sp-l4" x="46" y="404">04</text><text class="sp-t sp-l4" x="76" y="404">Analysis</text><text class="sp-s sp-l4" x="46" y="426">Blinded to the expected result</text>
+        <text class="sp-n sp-l5" x="46" y="524">05</text><text class="sp-t sp-l5" x="76" y="524">Finding</text><text class="sp-s sp-l5" x="46" y="546">Peer-reviewed, with the</text><text class="sp-s sp-l5" x="46" y="562">audit trail intact</text>
+        <text class="sp-ch sp-l6" x="46" y="600">CHALLENGE</text>
+      </g>
+      <circle class="sp-dot" r="4.5"><animateMotion dur="14s" repeatCount="indefinite"
+        keyPoints="0;0;0.25;0.25;0.5;0.5;0.75;0.75;1;1"
+        keyTimes="0;0.30;0.38;0.46;0.54;0.62;0.70;0.78;0.86;1" calcMode="linear">
+        <mpath href="#spSpineM"/></animateMotion></circle>
+      <text class="sp-cap" x="0" y="660">The finding does not move.</text>
+    </svg>
   </div>
 </section>
 
