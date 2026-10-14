@@ -734,7 +734,7 @@
     </div>
     <div class="la-hero-plan">
 <svg class="lp" viewBox="0 0 900 620" role="img"
-  aria-label="Architectural plan of a laboratory: sample receipt, preparation, cold store, main laboratory, gowning lobby, clean room, data and reporting, with the sample route drawn through it">
+  aria-label="Architectural plan of a laboratory. The upper range runs sample receipt, preparation and cold store from left to right. The lower range returns right to left through the main laboratory, gowning lobby, clean room and data and reporting, so the sample route runs as a single continuous one-way flow through every doorway.">
  <defs>
   <pattern id="lpGrid" width="30" height="30" patternUnits="userSpaceOnUse">
    <path d="M30 0 L0 0 0 30" fill="none" stroke="#C5A25B" stroke-width=".4" opacity=".13"/>
@@ -746,32 +746,36 @@
  <!-- outer envelope -->
  <rect class="lp-w lp-d1" x="40" y="40" width="820" height="540" rx="2"/>
 
- <!-- partitions, drawn with door gaps -->
- <path class="lp-w lp-d2" d="M300 40 L300 150 M300 200 L300 280"/>
- <path class="lp-w lp-d2" d="M560 40 L560 150 M560 200 L560 280"/>
- <path class="lp-w lp-d3" d="M40 280 L150 280 M210 280 L470 280 M530 280 L860 280"/>
- <path class="lp-w lp-d4" d="M340 280 L340 400 M340 460 L340 580"/>
- <path class="lp-w lp-d4" d="M470 280 L470 400 M470 460 L470 580"/>
- <path class="lp-w lp-d5" d="M620 280 L620 400 M620 460 L620 580"/>
+ <!-- upper partitions, door gaps centred on the circulation axis y=165 -->
+ <path class="lp-w lp-d2" d="M300 40 L300 140 M300 190 L300 280"/>
+ <path class="lp-w lp-d2" d="M560 40 L560 140 M560 190 L560 280"/>
+
+ <!-- band divider, one door carrying cold store into the main laboratory -->
+ <path class="lp-w lp-d3" d="M40 280 L685 280 M735 280 L860 280"/>
+
+ <!-- lower partitions, door gaps centred on the circulation axis y=430 -->
+ <path class="lp-w lp-d4" d="M560 280 L560 405 M560 455 L560 580"/>
+ <path class="lp-w lp-d4" d="M430 280 L430 405 M430 455 L430 580"/>
+ <path class="lp-w lp-d5" d="M280 280 L280 405 M280 455 L280 580"/>
 
  <!-- clean room, marked as the controlled zone -->
- <rect class="lp-clean lp-d6" x="470" y="280" width="150" height="300"/>
+ <rect class="lp-clean lp-d6" x="280" y="280" width="150" height="300"/>
 
  <!-- room labels -->
  <g class="lp-lb">
   <text class="lp-n lp-l1" x="60" y="72">01</text><text class="lp-t lp-l1" x="60" y="92">Sample receipt</text>
   <text class="lp-n lp-l2" x="320" y="72">02</text><text class="lp-t lp-l2" x="320" y="92">Preparation</text>
   <text class="lp-n lp-l3" x="580" y="72">03</text><text class="lp-t lp-l3" x="580" y="92">Cold store</text>
-  <text class="lp-n lp-l4" x="60" y="312">04</text><text class="lp-t lp-l4" x="60" y="332">Main laboratory</text>
-  <text class="lp-n lp-l5" x="360" y="312">05</text><text class="lp-t lp-l5" x="360" y="332">Gowning</text>
-  <text class="lp-n lp-l6" x="490" y="312">06</text><text class="lp-t lp-l6" x="490" y="332">Clean room</text>
-  <text class="lp-s lp-l6" x="490" y="350">ISO 7</text>
-  <text class="lp-n lp-l7" x="640" y="312">07</text><text class="lp-t lp-l7" x="640" y="332">Data &amp; reporting</text>
+  <text class="lp-n lp-l4" x="580" y="312">04</text><text class="lp-t lp-l4" x="580" y="332">Main laboratory</text>
+  <text class="lp-n lp-l5" x="450" y="312">05</text><text class="lp-t lp-l5" x="450" y="332">Gowning</text>
+  <text class="lp-n lp-l6" x="300" y="312">06</text><text class="lp-t lp-l6" x="300" y="332">Clean room</text>
+  <text class="lp-s lp-l6" x="300" y="350">ISO 7</text>
+  <text class="lp-n lp-l7" x="60" y="312">07</text><text class="lp-t lp-l7" x="60" y="332">Data &amp; reporting</text>
  </g>
 
  <!-- the route a sample takes -->
  <path class="lp-flow" id="lpRoute"
-   d="M120 110 L120 163 L430 163 L430 110 L490 110 L490 163 L690 163 L690 230 L780 230 L780 187 L180 187 L180 430 L380 430 L380 360 L430 360 L430 430 L545 430 L740 430 L740 520"/>
+   d="M120 110 L120 165 L710 165 L710 430 L200 430 L200 520"/>
  <circle class="lp-dot" r="5"><animateMotion dur="14s" repeatCount="indefinite"
    keyPoints="0;0;1;1" keyTimes="0;0.28;0.92;1" calcMode="linear">
    <mpath href="#lpRoute"/></animateMotion></circle>
