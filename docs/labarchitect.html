@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/hh-logo-f0375cde34.png" type="image/png">
-  <title>LabArchitect, Laboratory Deployment, HH Global</title>
+  <title>LabArchitect, Laboratory Deployment, HH Scientific</title>
  <meta name="description" content="LabArchitect, the complete eight-module laboratory deployment system. From feasibility and design through to a validated, ISO accreditation-ready laboratory.">
  <link rel="canonical" href="https://hhglobalholdings.com/labarchitect.html">
  <meta name="robots" content="index, follow, max-image-preview:large">
  <meta property="og:type" content="website">
- <meta property="og:site_name" content="HH Global Holdings">
- <meta property="og:title" content="LabArchitect, Laboratory Deployment, HH Global">
+ <meta property="og:site_name" content="HH Scientific">
+ <meta property="og:title" content="LabArchitect, Laboratory Deployment, HH Scientific">
  <meta property="og:description" content="LabArchitect, the complete eight-module laboratory deployment system. From feasibility and design through to a validated, ISO accreditation-ready laboratory.">
  <meta property="og:url" content="https://hhglobalholdings.com/labarchitect.html">
  <meta property="og:image" content="https://hhglobalholdings.com/og-labarchitect.jpg">
  <meta property="og:locale" content="en_GB">
  <meta name="twitter:card" content="summary_large_image">
- <meta name="twitter:title" content="LabArchitect, Laboratory Deployment, HH Global">
+ <meta name="twitter:title" content="LabArchitect, Laboratory Deployment, HH Scientific">
  <meta name="twitter:description" content="LabArchitect, the complete eight-module laboratory deployment system. From feasibility and design through to a validated, ISO accreditation-ready laboratory.">
  <meta name="twitter:image" content="https://hhglobalholdings.com/og-labarchitect.jpg">
- <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"LabArchitect","serviceType":"Laboratory deployment","description":"LabArchitect, the complete eight-module laboratory deployment system. From feasibility and design through to a validated, ISO accreditation-ready laboratory.","url":"https://hhglobalholdings.com/labarchitect.html","provider":{"@type":"Organization","name":"HH Global Holdings","url":"https://hhglobalholdings.com/"}}</script>
+ <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"LabArchitect","serviceType":"Laboratory deployment","description":"LabArchitect, the complete eight-module laboratory deployment system. From feasibility and design through to a validated, ISO accreditation-ready laboratory.","url":"https://hhglobalholdings.com/labarchitect.html","provider":{"@type":"Organization","name":"HH Scientific","alternateName":"HH Global Holdings","legalName":"HH Global Holdings Ltd","url":"https://hhglobalholdings.com/"}}</script>
   <!-- Open Graph / LinkedIn link preview -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -103,6 +103,12 @@
     }
     .nav-logo span { color: var(--gold); }
     .nav-logo img { height: 38px; width: auto; display: block; }
+ nav .nav-logo { display: flex; align-items: center; gap: 9px; }
+ nav .nav-links { gap: 14px; margin-left: 12px; }
+ .nav-wm { font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 800; color: #FFFFFF; letter-spacing: 0.3px; line-height: 1.08; white-space: nowrap; }
+ .nav-wm small { display: block; font-size: 6.5px; font-weight: 700; letter-spacing: 1.3px; text-transform: uppercase; color: var(--gold); margin-top: 3px; white-space: nowrap; }
+ @media (max-width: 1280px) { nav .nav-links { gap: 15px; } .nav-wm small { display: none; } }
+ @media (max-width: 1100px) { nav .nav-links { gap: 0; } .nav-wm { font-size: 17px; } .nav-wm small { display: block; font-size: 7px; letter-spacing: 1.6px; } }
     .nav-links { display: flex; gap: 32px; list-style: none; }
     .nav-links a {
       color: rgba(255,255,255,0.72); text-decoration: none;
@@ -683,6 +689,25 @@
  line-height: 1.4;
  }
 </style>
+<style>
+ /* ─ WHITE MASTHEAD (2026-11-12) ─ matches the HH Scientific draft treatment ─ */
+ nav { background: #FFFFFF; backdrop-filter: none; border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(11,31,63,0.05); }
+ .nav-wm { color: var(--navy); }
+ .nav-wm small { color: var(--gold); }
+ nav .nav-logo, nav .nav-logo:hover { text-decoration: none; }
+ nav .nav-links a { color: var(--text-mid); }
+ nav .nav-links a:hover { color: var(--navy); }
+ .nav-cta, nav .nav-links a.nav-cta { background: var(--navy); color: #FFFFFF; }
+ .nav-cta:hover { background: var(--navy-light); color: #FFFFFF; }
+ .dropdown-menu { background: #FFFFFF; border-top: 2px solid var(--gold); box-shadow: 0 8px 24px rgba(11,31,63,0.12); }
+ .dropdown-menu a { color: var(--text-mid); }
+ .dropdown-menu a:hover { color: var(--navy); background: var(--cream); }
+ .nav-toggle span { background: var(--navy); }
+ @media (max-width: 1100px) {
+ nav .nav-links { background: #FFFFFF; border-bottom: 1px solid var(--border); box-shadow: 0 8px 20px rgba(11,31,63,0.08); }
+ nav .nav-links li { border-bottom: 1px solid var(--border); }
+ }
+</style>
 </head>
 <body>
 
@@ -690,7 +715,8 @@
 <nav>
  <div class="nav-inner">
  <a href="index.html" class="nav-logo">
- <img src="assets/hh-logo-f0375cde34.png" alt="HH Global" decoding="async" width="501" height="498">
+ <img src="assets/hh-logo-f0375cde34.png" alt="HH Scientific" width="501" height="498">
+    <span class="nav-wm">HH SCIENTIFIC<small>Research &middot; Evidence &middot; Innovation</small></span>
  </a>
  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
  <span></span><span></span><span></span>
@@ -699,7 +725,7 @@
  <li class="dropdown">
  <a href="index.html#clients">Who We Serve ▾</a>
  <div class="dropdown-menu">
- <a href="index.html#differentiator">Why HH Global Holdings</a>
+ <a href="index.html#differentiator">Why HH Scientific</a>
  <a href="index.html#markets">One Health</a>
  </div>
  </li>
@@ -726,7 +752,7 @@
     <div class="hero-content">
       <div class="section-tag">LabArchitect™ · Laboratory Deployment System</div>
       <h1>From Strategy<br><em>to Audit-Ready.</em></h1>
-      <p>LabArchitect™ is HH Global Holdings' complete eight-module laboratory deployment system. It begins well before a site is chosen, with feasibility, strategy, site selection, scoping and design, and runs through to a validated, accreditation-ready laboratory, ISO 17025/15189-compliant from inception, not retrofitted. One trusted partner providing overall leadership and a single point of accountability, coordinating specialist suppliers across governance, infrastructure, digital systems, quality control, and defensible reporting.</p>
+      <p>LabArchitect™ is HH Scientific' complete eight-module laboratory deployment system. It begins well before a site is chosen, with feasibility, strategy, site selection, scoping and design, and runs through to a validated, accreditation-ready laboratory, ISO 17025/15189-compliant from inception, not retrofitted. One trusted partner providing overall leadership and a single point of accountability, coordinating specialist suppliers across governance, infrastructure, digital systems, quality control, and defensible reporting.</p>
       <div class="hero-btns">
         <a href="#modules" class="btn btn-gold">Explore the 8 Modules</a>
         <a href="#contact" class="btn btn-outline">Discuss Your Build</a>
@@ -1073,7 +1099,7 @@
 <footer>
  <div class="footer-inner">
  <div class="footer-brand">
- <p>HH Global Holdings<br>Science, Evidence & Innovation</p>
+ <p>HH Scientific<br>Science, Evidence & Innovation</p>
  </div>
  <div class="footer-links">
  <a href="index.html">Home</a>&nbsp;&nbsp;·&nbsp;&nbsp;
@@ -1086,7 +1112,7 @@
  <a href="https://www.linkedin.com/company/110136969" target="_blank">LinkedIn</a>
  </div>
  <div class="footer-legal">
- <p>HH Global Holdings Ltd<br>73 Cornhill, London, EC3V 3QQ<br>Company Registered in England & Wales · Company No. 16865238<br>© 2026 HH Global Holdings Ltd. All rights reserved.</p>
+ <p>HH Scientific is a trading name of HH Global Holdings Ltd<br>73 Cornhill, London, EC3V 3QQ<br>Company Registered in England & Wales · Company No. 16865238<br>© 2026 HH Global Holdings Ltd. All rights reserved.</p>
  </div>
  </div>
 </footer>
