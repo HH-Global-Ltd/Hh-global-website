@@ -1390,6 +1390,24 @@
  .nav-wm small { color: var(--gold); }
  nav .nav-logo, nav .nav-logo:hover { text-decoration: none; }
  nav .nav-logo picture { display: block; line-height: 0; }
+ /* ─ UNIFORM CONTENT LISTS (2026-11-12) ─ unclassed <ul> only, so classed
+    lists such as .compare-feature and the nav keep their own treatment ─ */
+ ul:not([class]) { list-style: none; padding-left: 0; margin: 14px 0 0; }
+ ul:not([class]) > li { position: relative; padding-left: 18px; margin-bottom: 7px;
+   font-size: 14px; line-height: 1.65; color: var(--text-mid); }
+ ul:not([class]) > li::before { content: '\25AA'; position: absolute; left: 0; top: 0;
+   color: var(--gold); font-size: 10px; line-height: 2.3; }
+ ul:not([class]) > li:last-child { margin-bottom: 0; }
+ ul:not([class]) > li strong { color: var(--text); font-weight: 600; }
+ /* ─ UNIFORM SECTION RHYTHM (2026-11-12) ─ */
+ .section, .section-alt { padding: 80px 0; }
+ .section > .container > *:first-child,
+ .section-alt > .container > *:first-child { margin-top: 0; }
+ .section > .container > *:last-child,
+ .section-alt > .container > *:last-child { margin-bottom: 0; }
+ .labs-grid .case-card, .cases-grid .case-card { padding-bottom: 26px; }
+
+
  .footer-legal p .labs { color: rgba(255,255,255,0.62); }
  .footer-legal p .labs strong { color: var(--gold); font-weight: 600; letter-spacing: 0.4px; }
  nav .nav-links a { color: var(--text-mid); }
@@ -1429,6 +1447,13 @@
  </button>
  <ul class="nav-links">
  <li class="dropdown">
+ <a href="company.html">Company ▾</a>
+ <div class="dropdown-menu">
+ <a href="company.html">Company Profile</a>
+ <a href="company.html#articles">Publications</a>
+ </div>
+ </li>
+ <li class="dropdown">
  <a href="services.html">Services ▾</a>
  <div class="dropdown-menu">
  <a href="scientific-practice.html">Scientific Practice</a>
@@ -1445,13 +1470,6 @@
  </div>
  </li>
  <li><a href="leadership.html">Leadership</a></li>
- <li class="dropdown">
- <a href="company.html">Company ▾</a>
- <div class="dropdown-menu">
- <a href="company.html">Company Profile</a>
- <a href="company.html#articles">Publications</a>
- </div>
- </li>
  </ul>
  <a href="index.html#contact" class="nav-cta">Request a scoping call</a>
  </div>
