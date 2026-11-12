@@ -1396,6 +1396,7 @@
  .nav-wm { color: var(--navy); }
  .nav-wm small { color: var(--gold); }
  nav .nav-logo, nav .nav-logo:hover { text-decoration: none; }
+ nav .nav-logo picture { display: block; line-height: 0; }
  nav .nav-links a { color: var(--text-mid); }
  nav .nav-links a:hover { color: var(--navy); }
  .nav-cta, nav .nav-links a.nav-cta { background: var(--navy); color: #FFFFFF; }
@@ -1412,6 +1413,7 @@
 <link rel="preload" as="image" type="image/webp" href="hero-bg-cells.webp" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-var.woff2" crossorigin>
  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-latin-var.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-italic-latin-var.woff2" crossorigin>
  <style>
  /* Self-hosted Inter and Playfair Display, SIL OFL. See assets/fonts/README.md */
  @font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-var.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
@@ -1425,7 +1427,7 @@
 <nav>
  <div class="nav-inner">
  <a href="index.html" class="nav-logo">
- <img src="assets/hh-logo-f0375cde34.png" alt="HH Scientific" width="501" height="498">
+ <picture><source type="image/webp" srcset="assets/hh-logo-nav-80.webp"><img src="assets/hh-logo-nav-80.png" alt="HH Scientific" width="80" height="80"></picture>
     <span class="nav-wm">HH SCIENTIFIC<small>Research &middot; Evidence &middot; Innovation</small></span>
  </a>
  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -1470,10 +1472,10 @@
  </div>
  </div>
  <div class="hero-images">
- <div class="h-img"><picture><source srcset="assets/hero-accredited-lab-2bc1485d24.webp" type="image/webp"><img src="assets/hero-accredited-lab-5b3914adf2.jpg" alt="Accredited analytical laboratory" width="800" height="560" loading="eager"></picture></div>
- <div class="h-img"><picture><source srcset="assets/hero-sample-storage-37e2fc262e.webp" type="image/webp"><img src="assets/hero-sample-storage-f040c45c19.jpg" alt="Controlled sample storage" width="800" height="560" loading="eager"></picture></div>
- <div class="h-img"><picture><source srcset="assets/hero-instrumentation-c745998424.webp" type="image/webp"><img src="assets/hero-instrumentation-497f7c49a9.jpg" alt="Multiplex diagnostic instrumentation" width="800" height="560" loading="eager"></picture></div>
- <div class="h-img"><picture><source srcset="assets/hero-evidence-review-3d63479b1d.webp" type="image/webp"><img src="assets/hero-evidence-review-d8808f2e73.jpg" alt="Regulatory evidence review" width="800" height="560" loading="eager"></picture></div>
+ <div class="h-img"><picture><source type="image/webp" srcset="assets/hero-accredited-lab-5b3914adf2-300.webp 300w, assets/hero-accredited-lab-5b3914adf2-600.webp 600w, assets/hero-accredited-lab-2bc1485d24.webp 800w" sizes="(max-width: 900px) 296px, 294px"><source type="image/jpeg" srcset="assets/hero-accredited-lab-5b3914adf2-300.jpg 300w, assets/hero-accredited-lab-5b3914adf2-600.jpg 600w, assets/hero-accredited-lab-5b3914adf2.jpg 800w" sizes="(max-width: 900px) 296px, 294px"><img src="assets/hero-accredited-lab-5b3914adf2-600.jpg" alt="Accredited analytical laboratory" width="800" height="560" loading="eager" fetchpriority="high"></picture></div>
+ <div class="h-img"><picture><source type="image/webp" srcset="assets/hero-sample-storage-f040c45c19-300.webp 300w, assets/hero-sample-storage-f040c45c19-600.webp 600w, assets/hero-sample-storage-37e2fc262e.webp 800w" sizes="(max-width: 900px) 296px, 294px"><source type="image/jpeg" srcset="assets/hero-sample-storage-f040c45c19-300.jpg 300w, assets/hero-sample-storage-f040c45c19-600.jpg 600w, assets/hero-sample-storage-f040c45c19.jpg 800w" sizes="(max-width: 900px) 296px, 294px"><img src="assets/hero-sample-storage-f040c45c19-600.jpg" alt="Controlled sample storage" width="800" height="560" loading="eager" fetchpriority="high"></picture></div>
+ <div class="h-img"><picture><source type="image/webp" srcset="assets/hero-instrumentation-497f7c49a9-300.webp 300w, assets/hero-instrumentation-497f7c49a9-600.webp 600w, assets/hero-instrumentation-c745998424.webp 800w" sizes="(max-width: 900px) 296px, 294px"><source type="image/jpeg" srcset="assets/hero-instrumentation-497f7c49a9-300.jpg 300w, assets/hero-instrumentation-497f7c49a9-600.jpg 600w, assets/hero-instrumentation-497f7c49a9.jpg 800w" sizes="(max-width: 900px) 296px, 294px"><img src="assets/hero-instrumentation-497f7c49a9-600.jpg" alt="Multiplex diagnostic instrumentation" width="800" height="560" loading="eager" fetchpriority="high"></picture></div>
+ <div class="h-img"><picture><source type="image/webp" srcset="assets/hero-evidence-review-d8808f2e73-300.webp 300w, assets/hero-evidence-review-d8808f2e73-600.webp 600w, assets/hero-evidence-review-3d63479b1d.webp 800w" sizes="(max-width: 900px) 296px, 294px"><source type="image/jpeg" srcset="assets/hero-evidence-review-d8808f2e73-300.jpg 300w, assets/hero-evidence-review-d8808f2e73-600.jpg 600w, assets/hero-evidence-review-d8808f2e73.jpg 800w" sizes="(max-width: 900px) 296px, 294px"><img src="assets/hero-evidence-review-d8808f2e73-600.jpg" alt="Regulatory evidence review" width="800" height="560" loading="eager" fetchpriority="high"></picture></div>
  </div>
  </div>
 
