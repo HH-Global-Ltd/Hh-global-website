@@ -51,9 +51,9 @@
 
  /* ─ TYPOGRAPHY ─ */
  h1, h2, h3, h3.subhead { font-family: 'Playfair Display', serif; font-weight: 500; line-height: 1.2; }
- h1 { font-size: clamp(28px, 3.5vw, 46px); }
- h2 { font-size: clamp(22px, 2.8vw, 34px); }
- h3 { font-size: clamp(17px, 1.9vw, 22px); }
+ h1 { font-size: clamp(26px, 3.5vw, 44px); }
+ h2 { font-size: clamp(18px, 2.6vw, 32px); }
+ h3 { font-size: clamp(16px, 1.8vw, 21px); }
  h3.subhead { font-size: 20px; font-weight: 600; font-family: 'Playfair Display', serif; }
  p { font-size: 14px; line-height: 1.65; color: var(--text-mid); }
  #about p { font-size: 16px; }
@@ -84,7 +84,7 @@
 
  /* ─ LAYOUT ─ */
  .container { max-width: var(--max); margin: 0 auto; padding: 0 32px; }
- .section { padding: 60px 0; }
+ .section { padding: 80px 0; }
  .section-alt { background: #F0EDE9; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 60px 0; }
  .section-dark { background: var(--navy); }
  .text-center { text-align: center; }
@@ -1319,6 +1319,24 @@
  .nav-wm small { color: var(--gold); }
  nav .nav-logo, nav .nav-logo:hover { text-decoration: none; }
  nav .nav-logo picture { display: block; line-height: 0; }
+ /* ─ UNIFORM CONTENT LISTS (2026-11-12) ─ unclassed <ul> only, so classed
+    lists such as .compare-feature and the nav keep their own treatment ─ */
+ ul:not([class]) { list-style: none; padding-left: 0; margin: 14px 0 0; }
+ ul:not([class]) > li { position: relative; padding-left: 18px; margin-bottom: 7px;
+   font-size: 14px; line-height: 1.65; color: var(--text-mid); }
+ ul:not([class]) > li::before { content: '\25AA'; position: absolute; left: 0; top: 0;
+   color: var(--gold); font-size: 10px; line-height: 2.3; }
+ ul:not([class]) > li:last-child { margin-bottom: 0; }
+ ul:not([class]) > li strong { color: var(--text); font-weight: 600; }
+ /* ─ UNIFORM SECTION RHYTHM (2026-11-12) ─ */
+ .section, .section-alt { padding: 80px 0; }
+ .section > .container > *:first-child,
+ .section-alt > .container > *:first-child { margin-top: 0; }
+ .section > .container > *:last-child,
+ .section-alt > .container > *:last-child { margin-bottom: 0; }
+ .labs-grid .case-card, .cases-grid .case-card { padding-bottom: 26px; }
+
+
  .footer-legal p .labs { color: rgba(255,255,255,0.62); }
  .footer-legal p .labs strong { color: var(--gold); font-weight: 600; letter-spacing: 0.4px; }
  nav .nav-links a { color: var(--text-mid); }
