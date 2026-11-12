@@ -1465,6 +1465,7 @@
  .nav-wm { color: var(--navy); }
  .nav-wm small { color: var(--gold); }
  nav .nav-logo, nav .nav-logo:hover { text-decoration: none; }
+ nav .nav-logo picture { display: block; line-height: 0; }
  nav .nav-links a { color: var(--text-mid); }
  nav .nav-links a:hover { color: var(--navy); }
  .nav-cta, nav .nav-links a.nav-cta { background: var(--navy); color: #FFFFFF; }
@@ -1481,6 +1482,7 @@
 <link rel="preload" as="image" type="image/webp" href="hero-bg-cells.webp" fetchpriority="high">
   <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-var.woff2" crossorigin>
  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-latin-var.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-italic-latin-var.woff2" crossorigin>
  <style>
  /* Self-hosted Inter and Playfair Display, SIL OFL. See assets/fonts/README.md */
  @font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-var.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
@@ -1494,7 +1496,7 @@
 <nav>
  <div class="nav-inner">
  <a href="index.html" class="nav-logo">
- <img src="assets/hh-logo-f0375cde34.png" alt="HH Scientific" width="501" height="498">
+ <picture><source type="image/webp" srcset="assets/hh-logo-nav-80.webp"><img src="assets/hh-logo-nav-80.png" alt="HH Scientific" width="80" height="80"></picture>
     <span class="nav-wm">HH SCIENTIFIC<small>Research &middot; Evidence &middot; Innovation</small></span>
  </a>
  <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
