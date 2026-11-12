@@ -20,8 +20,6 @@
  <meta name="twitter:description" content="Mark Evans-Smith, Business Development and Strategy Director for The HH Group, leading commercial strategy across its operating companies.">
  <meta name="twitter:image" content="https://hhglobalholdings.com/assets/texture-bg-990c268157.jpg">
  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Mark Evans-Smith","jobTitle":"Business Development and Strategy Director","description":"Leads commercial strategy, client development and pipeline growth across HH Scientific.","url":"https://hhglobalholdings.com/mark.html","worksFor":{"@type":"Organization","name":"HH Scientific","alternateName":"HH Global Holdings","legalName":"HH Global Holdings Ltd","url":"https://hhglobalholdings.com/"}}</script>
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
  <style>
 
  :root {
@@ -544,6 +542,7 @@
  position: absolute;
  inset: 0;
  background-image: url('assets/texture-bg-990c268157.jpg');
+ background-image: image-set(url('assets/texture-bg-990c268157.webp') type('image/webp'), url('assets/texture-bg-990c268157.jpg') type('image/jpeg'));
  background-size: cover;
  background-position: center;
  opacity: 0.12;
@@ -1095,6 +1094,7 @@
  position: absolute;
  inset: 0;
  background-image: url('assets/texture-bg-990c268157.jpg');
+ background-image: image-set(url('assets/texture-bg-990c268157.webp') type('image/webp'), url('assets/texture-bg-990c268157.jpg') type('image/jpeg'));
  background-size: cover;
  background-position: center;
  opacity: 0.12;
@@ -1229,9 +1229,10 @@
 
  /* ── Bio page extras ── */
  .bio-hero {
- background:
- linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
+ background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
  url('hero-bg-cells.jpg') center/cover no-repeat;
+ background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
+ image-set(url('hero-bg-cells.webp') type('image/webp'), url('hero-bg-cells.jpg') type('image/jpeg')) center/cover no-repeat;
  min-height: 82vh;
  display: flex;
  align-items: center;
@@ -1476,6 +1477,15 @@
  nav .nav-links li { border-bottom: 1px solid var(--border); }
  }
 </style>
+<link rel="preload" as="image" type="image/webp" href="hero-bg-cells.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-var.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-latin-var.woff2" crossorigin>
+ <style>
+ /* Self-hosted Inter and Playfair Display, SIL OFL. See assets/fonts/README.md */
+ @font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-var.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
+ @font-face { font-family: 'Playfair Display'; src: url('assets/fonts/playfair-latin-var.woff2') format('woff2'); font-weight: 400 700; font-style: normal; font-display: swap; }
+ @font-face { font-family: 'Playfair Display'; src: url('assets/fonts/playfair-italic-latin-var.woff2') format('woff2'); font-weight: 400 500; font-style: italic; font-display: swap; }
+ </style>
 </head>
 <body>
 
@@ -1516,7 +1526,11 @@
 
 <!-- BIO HERO -->
 <div class="bio-hero">
- <img src="mark.jpg" alt="Mark Evans-Smith" class="bio-hero-photo" decoding="async" width="800" height="800">
+ <picture>
+   <source type="image/webp" srcset="mark-360.webp 360w, mark.webp 800w" sizes="180px">
+   <source type="image/jpeg" srcset="mark-360.jpg 360w, mark.jpg 800w" sizes="180px">
+   <img src="mark-360.jpg" alt="Mark Evans-Smith" class="bio-hero-photo" width="360" height="360">
+  </picture>
  <h1 class="bio-hero-name">Mark Evans-Smith</h1>
  <div class="bio-hero-role">Business Development &amp; Strategy Director</div>
  <div class="bio-badges">

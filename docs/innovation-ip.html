@@ -20,9 +20,6 @@
  <meta name="twitter:description" content="Innovation built on deep scientific capability: rapid diagnostics, new methodologies and frameworks across human, animal and environmental health.">
  <meta name="twitter:image" content="https://hhglobalholdings.com/assets/texture-bg-990c268157.jpg">
  <link rel="icon" href="assets/hh-logo-f0375cde34.png" type="image/png">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
  <style>
  :root {
  --navy: #0B1F3F;
@@ -173,9 +170,10 @@
  /* ─ HERO ─ */
  .hero {
  min-height: 580px;
- background:
- linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
+ background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
  url('hero-bg-cells.jpg') center/cover no-repeat;
+ background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%),
+ image-set(url('hero-bg-cells.webp') type('image/webp'), url('hero-bg-cells.jpg') type('image/jpeg')) center/cover no-repeat;
  display: flex; align-items: center; justify-content: flex-start;
  position: relative; overflow: hidden;
  padding: 116px 0 40px;
@@ -588,6 +586,7 @@
  position: absolute;
  inset: 0;
  background-image: url('assets/texture-bg-990c268157.jpg');
+ background-image: image-set(url('assets/texture-bg-990c268157.webp') type('image/webp'), url('assets/texture-bg-990c268157.jpg') type('image/jpeg'));
  background-size: cover;
  background-position: center;
  opacity: 0.12;
@@ -1140,6 +1139,7 @@
  position: absolute;
  inset: 0;
  background-image: url('assets/texture-bg-990c268157.jpg');
+ background-image: image-set(url('assets/texture-bg-990c268157.webp') type('image/webp'), url('assets/texture-bg-990c268157.jpg') type('image/jpeg'));
  background-size: cover;
  background-position: center;
  opacity: 0.12;
@@ -1390,6 +1390,15 @@
  nav .nav-links li { border-bottom: 1px solid var(--border); }
  }
 </style>
+<link rel="preload" as="image" type="image/webp" href="hero-bg-cells.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin-var.woff2" crossorigin>
+ <link rel="preload" as="font" type="font/woff2" href="assets/fonts/playfair-latin-var.woff2" crossorigin>
+ <style>
+ /* Self-hosted Inter and Playfair Display, SIL OFL. See assets/fonts/README.md */
+ @font-face { font-family: 'Inter'; src: url('assets/fonts/inter-latin-var.woff2') format('woff2'); font-weight: 300 700; font-style: normal; font-display: swap; }
+ @font-face { font-family: 'Playfair Display'; src: url('assets/fonts/playfair-latin-var.woff2') format('woff2'); font-weight: 400 700; font-style: normal; font-display: swap; }
+ @font-face { font-family: 'Playfair Display'; src: url('assets/fonts/playfair-italic-latin-var.woff2') format('woff2'); font-weight: 400 500; font-style: italic; font-display: swap; }
+ </style>
 </head>
 <body>
 <!-- NAV -->
@@ -1428,7 +1437,8 @@
 </nav>
 
 <!-- HERO -->
-<section class="hero" style="background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%), url('hero-bg-cells.jpg') center/cover no-repeat;">
+<section class="hero" style="background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%), url('hero-bg-cells.jpg') center/cover no-repeat;
+background: linear-gradient(160deg, rgba(11,31,63,0.55) 0%, rgba(21,45,85,0.55) 40%, rgba(30,58,110,0.55) 100%), image-set(url('hero-bg-cells.webp') type('image/webp'), url('hero-bg-cells.jpg') type('image/jpeg')) center/cover no-repeat;">
  <div class="hero-decor"></div>
  <div class="hero-inner">
  <div class="hero-content">
