@@ -1388,6 +1388,25 @@
    .compare-grid { grid-template-columns: 1fr; }
  }
 </style>
+<style>
+ /* ─ WHITE MASTHEAD (2026-11-12) ─ matches the HH Scientific draft treatment ─ */
+ nav { background: #FFFFFF; backdrop-filter: none; border-bottom: 1px solid var(--border); box-shadow: 0 1px 3px rgba(11,31,63,0.05); }
+ .nav-wm { color: var(--navy); }
+ .nav-wm small { color: var(--gold); }
+ nav .nav-logo, nav .nav-logo:hover { text-decoration: none; }
+ nav .nav-links a { color: var(--text-mid); }
+ nav .nav-links a:hover { color: var(--navy); }
+ .nav-cta, nav .nav-links a.nav-cta { background: var(--navy); color: #FFFFFF; }
+ .nav-cta:hover { background: var(--navy-light); color: #FFFFFF; }
+ .dropdown-menu { background: #FFFFFF; border-top: 2px solid var(--gold); box-shadow: 0 8px 24px rgba(11,31,63,0.12); }
+ .dropdown-menu a { color: var(--text-mid); }
+ .dropdown-menu a:hover { color: var(--navy); background: var(--cream); }
+ .nav-toggle span { background: var(--navy); }
+ @media (max-width: 1100px) {
+ nav .nav-links { background: #FFFFFF; border-bottom: 1px solid var(--border); box-shadow: 0 8px 20px rgba(11,31,63,0.08); }
+ nav .nav-links li { border-bottom: 1px solid var(--border); }
+ }
+</style>
 </head>
 <body>
 
